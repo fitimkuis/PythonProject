@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.6 on win32)" generated="20200114 18:05:05.834" rpa="false">
+<suite id="s1" name="robotTestSuite" source="C:\Users\fitim\IdeaProjects\PythonProject\.idea\com\robot\robotTestSuite.robot">
+<test id="s1-t1" name="date-time">
+<kw name="add date to date">
+<kw name="Autoupdate Chromedriver" library="ChromeDriverAutomation">
+<msg timestamp="20200114 18:05:14.501" level="INFO">79.0.3945.117
+79.0.3945.36
+79
+79
+chrome and driver match</msg>
+<status status="PASS" starttime="20200114 18:05:06.365" endtime="20200114 18:05:14.501"></status>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200114 18:05:14.501" level="INFO">${date} = 2020-01-14 18:05:14.501</msg>
+<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${date}</arg>
+<arg>result_format=%y%m%d</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200114 18:05:14.501" level="INFO">${date} = 200114</msg>
+<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>current date is ${date}</arg>
+</arguments>
+<msg timestamp="20200114 18:05:14.501" level="INFO">current date is 200114</msg>
+<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200114 18:05:14.501" level="INFO">${date} = 2020-01-14 18:05:14.501</msg>
+<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${date}</arg>
+<arg>result_format=%Y%m%d</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200114 18:05:14.501" level="INFO">${date} = 20200114</msg>
+<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>current date is ${date}</arg>
+</arguments>
+<msg timestamp="20200114 18:05:14.501" level="INFO">current date is 20200114</msg>
+<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+</kw>
+<kw name="Split String To Characters" library="String">
+<doc>Splits the given ``string`` to characters.</doc>
+<arguments>
+<arg>${date}</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200114 18:05:14.501" level="INFO">${date} = ['2', '0', '2', '0', '0', '1', '1', '4']</msg>
+<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Splitted date ${date}</arg>
+</arguments>
+<msg timestamp="20200114 18:05:14.501" level="INFO">Splitted date ['2', '0', '2', '0', '0', '1', '1', '4']</msg>
+<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${date[2]}</arg>
+<arg>${date[3]}</arg>
+<arg>${date[4]}</arg>
+<arg>${date[5]}</arg>
+<arg>${date[6]}</arg>
+<arg>${date[7]}</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200114 18:05:14.517" level="INFO">${date} = 200114</msg>
+<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.517"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Catenated date ${date}</arg>
+</arguments>
+<msg timestamp="20200114 18:05:14.517" level="INFO">Catenated date 200114</msg>
+<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200114 18:05:14.517" level="INFO">${date} = 2020-01-14 18:05:14.517</msg>
+<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+</kw>
+<kw name="Subtract Time From Date" library="DateTime">
+<doc>Subtracts time from date and returns the resulting date.</doc>
+<arguments>
+<arg>${date}</arg>
+<arg>7 days</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200114 18:05:14.517" level="INFO">${date} = 2020-01-07 18:05:14.517</msg>
+<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${date}</arg>
+<arg>result_format=%d/%m/%Y</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200114 18:05:14.517" level="INFO">${date} = 07/01/2020</msg>
+<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${date}</arg>
+<arg>Convert Date</arg>
+<arg>${date}</arg>
+<arg>result_format=%Y-%m-%d %H:%M:%S.%f</arg>
+</arguments>
+<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${curr_date}</var>
+</assign>
+<msg timestamp="20200114 18:05:14.517" level="INFO">${curr_date} = 2020-01-14 18:05:14.517</msg>
+<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>-3</arg>
+</arguments>
+<assign>
+<var>${addDays}</var>
+</assign>
+<msg timestamp="20200114 18:05:14.517" level="INFO">${addDays} = -3</msg>
+<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>%Y-%m-%d %H:%M:%S.%f</arg>
+</arguments>
+<assign>
+<var>${output_format}</var>
+</assign>
+<msg timestamp="20200114 18:05:14.517" level="INFO">${output_format} = %Y-%m-%d %H:%M:%S.%f</msg>
+<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+</kw>
+<kw name="Get Date" library="date_time">
+<arguments>
+<arg>${curr_date}</arg>
+<arg>${output_format}</arg>
+<arg>${addDays}</arg>
+</arguments>
+<assign>
+<var>${another_date}</var>
+</assign>
+<msg timestamp="20200114 18:05:14.532" level="INFO">%Y-%m-%d %H:%M:%S.%f
+-3</msg>
+<msg timestamp="20200114 18:05:14.532" level="INFO">${another_date} = 2020-01-11 18:05:14.517000</msg>
+<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.532"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${another_date}</arg>
+<arg>result_format=%d/%m/%Y</arg>
+</arguments>
+<assign>
+<var>${another_date}</var>
+</assign>
+<msg timestamp="20200114 18:05:14.532" level="INFO">${another_date} = 11/01/2020</msg>
+<status status="PASS" starttime="20200114 18:05:14.532" endtime="20200114 18:05:14.532"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${date2}</arg>
+<arg>Subtract Time From Date</arg>
+<arg>${another_date}</arg>
+<arg>7</arg>
+</arguments>
+<status status="PASS" starttime="20200114 18:05:14.532" endtime="20200114 18:05:14.532"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${date2}</arg>
+<arg>Subtract Date From Date</arg>
+<arg>${date}</arg>
+<arg>${another_date}</arg>
+</arguments>
+<status status="PASS" starttime="20200114 18:05:14.532" endtime="20200114 18:05:14.532"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${date2}</arg>
+<arg>Convert Date</arg>
+<arg>${date2}</arg>
+<arg>result_format=%d/%m/%Y</arg>
+</arguments>
+<status status="PASS" starttime="20200114 18:05:14.532" endtime="20200114 18:05:14.532"></status>
+</kw>
+<status status="PASS" starttime="20200114 18:05:06.365" endtime="20200114 18:05:14.532"></status>
+</kw>
+<status status="PASS" starttime="20200114 18:05:06.365" endtime="20200114 18:05:14.532" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200114 18:05:05.834" endtime="20200114 18:05:14.532"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="robotTestSuite">robotTestSuite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
