@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.6 on win32)" generated="20200114 18:05:05.834" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.7.6 on win32)" generated="20200114 18:15:23.160" rpa="false">
 <suite id="s1" name="robotTestSuite" source="C:\Users\fitim\IdeaProjects\PythonProject\.idea\com\robot\robotTestSuite.robot">
 <test id="s1-t1" name="date-time">
 <kw name="add date to date">
 <kw name="Autoupdate Chromedriver" library="ChromeDriverAutomation">
-<msg timestamp="20200114 18:05:14.501" level="INFO">79.0.3945.117
+<assign>
+<var>${update}</var>
+</assign>
+<msg timestamp="20200114 18:15:31.722" level="INFO">79.0.3945.117
 79.0.3945.36
 79
 79
 chrome and driver match</msg>
-<status status="PASS" starttime="20200114 18:05:06.365" endtime="20200114 18:05:14.501"></status>
+<msg timestamp="20200114 18:15:31.722" level="INFO">${update} = no needed to do update</msg>
+<status status="PASS" starttime="20200114 18:15:23.735" endtime="20200114 18:15:31.722"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${update}</arg>
+</arguments>
+<msg timestamp="20200114 18:15:31.722" level="INFO">no needed to do update</msg>
+<status status="PASS" starttime="20200114 18:15:31.722" endtime="20200114 18:15:31.722"></status>
 </kw>
 <kw name="Get Current Date" library="DateTime">
 <doc>Returns current local or UTC time with an optional increment.</doc>
 <assign>
 <var>${date}</var>
 </assign>
-<msg timestamp="20200114 18:05:14.501" level="INFO">${date} = 2020-01-14 18:05:14.501</msg>
-<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+<msg timestamp="20200114 18:15:31.722" level="INFO">${date} = 2020-01-14 18:15:31.722</msg>
+<status status="PASS" starttime="20200114 18:15:31.722" endtime="20200114 18:15:31.722"></status>
 </kw>
 <kw name="Convert Date" library="DateTime">
 <doc>Converts between supported `date formats`.</doc>
@@ -28,24 +40,24 @@ chrome and driver match</msg>
 <assign>
 <var>${date}</var>
 </assign>
-<msg timestamp="20200114 18:05:14.501" level="INFO">${date} = 200114</msg>
-<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+<msg timestamp="20200114 18:15:31.722" level="INFO">${date} = 200114</msg>
+<status status="PASS" starttime="20200114 18:15:31.722" endtime="20200114 18:15:31.722"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>current date is ${date}</arg>
 </arguments>
-<msg timestamp="20200114 18:05:14.501" level="INFO">current date is 200114</msg>
-<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+<msg timestamp="20200114 18:15:31.722" level="INFO">current date is 200114</msg>
+<status status="PASS" starttime="20200114 18:15:31.722" endtime="20200114 18:15:31.722"></status>
 </kw>
 <kw name="Get Current Date" library="DateTime">
 <doc>Returns current local or UTC time with an optional increment.</doc>
 <assign>
 <var>${date}</var>
 </assign>
-<msg timestamp="20200114 18:05:14.501" level="INFO">${date} = 2020-01-14 18:05:14.501</msg>
-<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+<msg timestamp="20200114 18:15:31.722" level="INFO">${date} = 2020-01-14 18:15:31.722</msg>
+<status status="PASS" starttime="20200114 18:15:31.722" endtime="20200114 18:15:31.722"></status>
 </kw>
 <kw name="Convert Date" library="DateTime">
 <doc>Converts between supported `date formats`.</doc>
@@ -56,16 +68,16 @@ chrome and driver match</msg>
 <assign>
 <var>${date}</var>
 </assign>
-<msg timestamp="20200114 18:05:14.501" level="INFO">${date} = 20200114</msg>
-<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+<msg timestamp="20200114 18:15:31.722" level="INFO">${date} = 20200114</msg>
+<status status="PASS" starttime="20200114 18:15:31.722" endtime="20200114 18:15:31.722"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>current date is ${date}</arg>
 </arguments>
-<msg timestamp="20200114 18:05:14.501" level="INFO">current date is 20200114</msg>
-<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+<msg timestamp="20200114 18:15:31.722" level="INFO">current date is 20200114</msg>
+<status status="PASS" starttime="20200114 18:15:31.722" endtime="20200114 18:15:31.722"></status>
 </kw>
 <kw name="Split String To Characters" library="String">
 <doc>Splits the given ``string`` to characters.</doc>
@@ -75,16 +87,16 @@ chrome and driver match</msg>
 <assign>
 <var>${date}</var>
 </assign>
-<msg timestamp="20200114 18:05:14.501" level="INFO">${date} = ['2', '0', '2', '0', '0', '1', '1', '4']</msg>
-<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+<msg timestamp="20200114 18:15:31.722" level="INFO">${date} = ['2', '0', '2', '0', '0', '1', '1', '4']</msg>
+<status status="PASS" starttime="20200114 18:15:31.722" endtime="20200114 18:15:31.722"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>Splitted date ${date}</arg>
 </arguments>
-<msg timestamp="20200114 18:05:14.501" level="INFO">Splitted date ['2', '0', '2', '0', '0', '1', '1', '4']</msg>
-<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.501"></status>
+<msg timestamp="20200114 18:15:31.722" level="INFO">Splitted date ['2', '0', '2', '0', '0', '1', '1', '4']</msg>
+<status status="PASS" starttime="20200114 18:15:31.722" endtime="20200114 18:15:31.722"></status>
 </kw>
 <kw name="Catenate" library="BuiltIn">
 <doc>Catenates the given items together and returns the resulted string.</doc>
@@ -100,24 +112,24 @@ chrome and driver match</msg>
 <assign>
 <var>${date}</var>
 </assign>
-<msg timestamp="20200114 18:05:14.517" level="INFO">${date} = 200114</msg>
-<status status="PASS" starttime="20200114 18:05:14.501" endtime="20200114 18:05:14.517"></status>
+<msg timestamp="20200114 18:15:31.722" level="INFO">${date} = 200114</msg>
+<status status="PASS" starttime="20200114 18:15:31.722" endtime="20200114 18:15:31.722"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>Catenated date ${date}</arg>
 </arguments>
-<msg timestamp="20200114 18:05:14.517" level="INFO">Catenated date 200114</msg>
-<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+<msg timestamp="20200114 18:15:31.737" level="INFO">Catenated date 200114</msg>
+<status status="PASS" starttime="20200114 18:15:31.722" endtime="20200114 18:15:31.737"></status>
 </kw>
 <kw name="Get Current Date" library="DateTime">
 <doc>Returns current local or UTC time with an optional increment.</doc>
 <assign>
 <var>${date}</var>
 </assign>
-<msg timestamp="20200114 18:05:14.517" level="INFO">${date} = 2020-01-14 18:05:14.517</msg>
-<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+<msg timestamp="20200114 18:15:31.737" level="INFO">${date} = 2020-01-14 18:15:31.737</msg>
+<status status="PASS" starttime="20200114 18:15:31.737" endtime="20200114 18:15:31.737"></status>
 </kw>
 <kw name="Subtract Time From Date" library="DateTime">
 <doc>Subtracts time from date and returns the resulting date.</doc>
@@ -128,8 +140,8 @@ chrome and driver match</msg>
 <assign>
 <var>${date}</var>
 </assign>
-<msg timestamp="20200114 18:05:14.517" level="INFO">${date} = 2020-01-07 18:05:14.517</msg>
-<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+<msg timestamp="20200114 18:15:31.737" level="INFO">${date} = 2020-01-07 18:15:31.737</msg>
+<status status="PASS" starttime="20200114 18:15:31.737" endtime="20200114 18:15:31.737"></status>
 </kw>
 <kw name="Convert Date" library="DateTime">
 <doc>Converts between supported `date formats`.</doc>
@@ -140,8 +152,8 @@ chrome and driver match</msg>
 <assign>
 <var>${date}</var>
 </assign>
-<msg timestamp="20200114 18:05:14.517" level="INFO">${date} = 07/01/2020</msg>
-<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+<msg timestamp="20200114 18:15:31.737" level="INFO">${date} = 07/01/2020</msg>
+<status status="PASS" starttime="20200114 18:15:31.737" endtime="20200114 18:15:31.737"></status>
 </kw>
 <kw name="Comment" library="BuiltIn">
 <doc>Displays the given messages in the log file as keyword arguments.</doc>
@@ -151,15 +163,15 @@ chrome and driver match</msg>
 <arg>${date}</arg>
 <arg>result_format=%Y-%m-%d %H:%M:%S.%f</arg>
 </arguments>
-<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+<status status="PASS" starttime="20200114 18:15:31.737" endtime="20200114 18:15:31.737"></status>
 </kw>
 <kw name="Get Current Date" library="DateTime">
 <doc>Returns current local or UTC time with an optional increment.</doc>
 <assign>
 <var>${curr_date}</var>
 </assign>
-<msg timestamp="20200114 18:05:14.517" level="INFO">${curr_date} = 2020-01-14 18:05:14.517</msg>
-<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+<msg timestamp="20200114 18:15:31.737" level="INFO">${curr_date} = 2020-01-14 18:15:31.737</msg>
+<status status="PASS" starttime="20200114 18:15:31.737" endtime="20200114 18:15:31.737"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -169,8 +181,8 @@ chrome and driver match</msg>
 <assign>
 <var>${addDays}</var>
 </assign>
-<msg timestamp="20200114 18:05:14.517" level="INFO">${addDays} = -3</msg>
-<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+<msg timestamp="20200114 18:15:31.737" level="INFO">${addDays} = -3</msg>
+<status status="PASS" starttime="20200114 18:15:31.737" endtime="20200114 18:15:31.737"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -180,8 +192,8 @@ chrome and driver match</msg>
 <assign>
 <var>${output_format}</var>
 </assign>
-<msg timestamp="20200114 18:05:14.517" level="INFO">${output_format} = %Y-%m-%d %H:%M:%S.%f</msg>
-<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.517"></status>
+<msg timestamp="20200114 18:15:31.737" level="INFO">${output_format} = %Y-%m-%d %H:%M:%S.%f</msg>
+<status status="PASS" starttime="20200114 18:15:31.737" endtime="20200114 18:15:31.737"></status>
 </kw>
 <kw name="Get Date" library="date_time">
 <arguments>
@@ -192,10 +204,10 @@ chrome and driver match</msg>
 <assign>
 <var>${another_date}</var>
 </assign>
-<msg timestamp="20200114 18:05:14.532" level="INFO">%Y-%m-%d %H:%M:%S.%f
+<msg timestamp="20200114 18:15:31.737" level="INFO">%Y-%m-%d %H:%M:%S.%f
 -3</msg>
-<msg timestamp="20200114 18:05:14.532" level="INFO">${another_date} = 2020-01-11 18:05:14.517000</msg>
-<status status="PASS" starttime="20200114 18:05:14.517" endtime="20200114 18:05:14.532"></status>
+<msg timestamp="20200114 18:15:31.737" level="INFO">${another_date} = 2020-01-11 18:15:31.737000</msg>
+<status status="PASS" starttime="20200114 18:15:31.737" endtime="20200114 18:15:31.737"></status>
 </kw>
 <kw name="Convert Date" library="DateTime">
 <doc>Converts between supported `date formats`.</doc>
@@ -206,8 +218,8 @@ chrome and driver match</msg>
 <assign>
 <var>${another_date}</var>
 </assign>
-<msg timestamp="20200114 18:05:14.532" level="INFO">${another_date} = 11/01/2020</msg>
-<status status="PASS" starttime="20200114 18:05:14.532" endtime="20200114 18:05:14.532"></status>
+<msg timestamp="20200114 18:15:31.737" level="INFO">${another_date} = 11/01/2020</msg>
+<status status="PASS" starttime="20200114 18:15:31.737" endtime="20200114 18:15:31.737"></status>
 </kw>
 <kw name="Comment" library="BuiltIn">
 <doc>Displays the given messages in the log file as keyword arguments.</doc>
@@ -217,7 +229,7 @@ chrome and driver match</msg>
 <arg>${another_date}</arg>
 <arg>7</arg>
 </arguments>
-<status status="PASS" starttime="20200114 18:05:14.532" endtime="20200114 18:05:14.532"></status>
+<status status="PASS" starttime="20200114 18:15:31.753" endtime="20200114 18:15:31.753"></status>
 </kw>
 <kw name="Comment" library="BuiltIn">
 <doc>Displays the given messages in the log file as keyword arguments.</doc>
@@ -227,7 +239,7 @@ chrome and driver match</msg>
 <arg>${date}</arg>
 <arg>${another_date}</arg>
 </arguments>
-<status status="PASS" starttime="20200114 18:05:14.532" endtime="20200114 18:05:14.532"></status>
+<status status="PASS" starttime="20200114 18:15:31.753" endtime="20200114 18:15:31.753"></status>
 </kw>
 <kw name="Comment" library="BuiltIn">
 <doc>Displays the given messages in the log file as keyword arguments.</doc>
@@ -237,13 +249,13 @@ chrome and driver match</msg>
 <arg>${date2}</arg>
 <arg>result_format=%d/%m/%Y</arg>
 </arguments>
-<status status="PASS" starttime="20200114 18:05:14.532" endtime="20200114 18:05:14.532"></status>
+<status status="PASS" starttime="20200114 18:15:31.753" endtime="20200114 18:15:31.753"></status>
 </kw>
-<status status="PASS" starttime="20200114 18:05:06.365" endtime="20200114 18:05:14.532"></status>
+<status status="PASS" starttime="20200114 18:15:23.735" endtime="20200114 18:15:31.753"></status>
 </kw>
-<status status="PASS" starttime="20200114 18:05:06.365" endtime="20200114 18:05:14.532" critical="yes"></status>
+<status status="PASS" starttime="20200114 18:15:23.735" endtime="20200114 18:15:31.753" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20200114 18:05:05.834" endtime="20200114 18:05:14.532"></status>
+<status status="PASS" starttime="20200114 18:15:23.175" endtime="20200114 18:15:31.753"></status>
 </suite>
 <statistics>
 <total>

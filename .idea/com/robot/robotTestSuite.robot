@@ -21,7 +21,8 @@ exel-lib
 
 *** Keywords ***
 add date to date
-    autoupdate_chromedriver
+    ${update}  autoupdate_chromedriver
+    Log        ${update}
     ${date}    Get Current Date
     ${date}    Convert Date    ${date}    result_format=%y%m%d
     Log    current date is ${date}
