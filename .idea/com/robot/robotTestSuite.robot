@@ -17,7 +17,9 @@ ${update}         ${EMPTY}
 
 *** Test Cases ***
 date-time
+    download_geckodriver
     add date to date
+
 exel-lib
     Comment    use-excel
     excel-keyword
@@ -32,7 +34,6 @@ open-google-firefox
     Close Browser
 
 add date to date
-    download_geckodriver
     ${update}       autoupdate_chromedriver
     Log        ${update}
     ${date}    Get Current Date
