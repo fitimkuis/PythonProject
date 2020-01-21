@@ -6,6 +6,9 @@ import time
 from webdriverdownloader import GeckoDriverDownloader
 
 #download latest geckodriver to folder /user/webdriver and make symbolic link to folder /user/bin
+#https://github.com/leonidessaguisagjr/webdriverdownloader
+#change here line 129 download_url = self.get_download_url(version, os_name=os_name, bitness=bitness) TO
+#download_url = self.get_download_url(version, os_name=os_name, bitness="64")
 def download_geckodriver():
     gdd = GeckoDriverDownloader()
     gdd.download_and_install()
