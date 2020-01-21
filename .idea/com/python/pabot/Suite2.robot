@@ -3,9 +3,9 @@ Library           SeleniumLibrary
 
 *** Test cases ***
 Check the speed of your broadband
-    Open Browser    http://www.fast.com    ff
-    Sleep    15
+    Open Browser    http://www.fast.com    chrome
+    Sleep    10
     click element    id=speed-progress-indicator-icon
-    Sleep    15
+    Sleep    10
     ${speed}=    Get Text    id=speed-value
     Close Browser
