@@ -11,14 +11,17 @@ Library           OperatingSystem
 Library           excelUtil
 Library           SeleniumLibrary
 Library           .idea/com/scripts/ChromeDriverAutomation.py
+Library           .idea/com/scripts/run_pabot.py
 
 
 *** Variables ***
 ${excel_path}     C:/Users/fitim/AppData/Local/Programs/Python/Python37/test.xls
 ${update}         ${EMPTY}
 
-
 *** Test Cases ***
+run-pabot-test-suites
+    pabot
+
 date-time
     add date to date
 
@@ -30,6 +33,9 @@ Browser-test
     open-google-firefox
 
 *** Keywords ***
+
+pabot
+    execute_pabot
 
 download-chromedriver
     download_chromedriver
