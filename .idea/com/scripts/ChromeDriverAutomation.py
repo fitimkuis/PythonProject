@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.options import Options
 import time
 from webdriverdownloader import GeckoDriverDownloader
 
+#download latest geckodriver to folder /user/webdriver and make symbolic link to folder /user/bin
 def download_geckodriver():
     gdd = GeckoDriverDownloader()
     gdd.download_and_install()

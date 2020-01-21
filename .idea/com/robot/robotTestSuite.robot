@@ -1,5 +1,7 @@
 *** Settings ***
 
+Suite Setup      update-drivers
+
 Library           DateTime
 Library           String
 Library           .idea/com/scripts/date_time.py
@@ -10,6 +12,7 @@ Library           excelUtil
 Library           SeleniumLibrary
 Library           .idea/com/scripts/ChromeDriverAutomation.py
 
+
 *** Variables ***
 ${excel_path}     C:/Users/fitim/AppData/Local/Programs/Python/Python37/test.xls
 ${update}         ${EMPTY}
@@ -17,7 +20,6 @@ ${update}         ${EMPTY}
 
 *** Test Cases ***
 date-time
-    download_geckodriver
     add date to date
 
 exel-lib
@@ -29,13 +31,15 @@ Browser-test
 
 *** Keywords ***
 
+update-drivers
+    download_geckodriver
+    ${update}       autoupdate_chromedriver
+    Log        ${update}
 open-google-firefox
     Open Browser    https://www.google.com      ff
     Close Browser
 
 add date to date
-    ${update}       autoupdate_chromedriver
-    Log        ${update}
     ${date}    Get Current Date
     ${date}    Convert Date    ${date}    result_format=%y%m%d
     Log    current date is ${date}
