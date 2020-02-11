@@ -1,6 +1,6 @@
 *** Settings ***
 
-Suite Setup      update-drivers
+#Suite Setup      update-drivers
 
 Library           DateTime
 Library           String
@@ -12,6 +12,7 @@ Library           excelUtil
 Library           SeleniumLibrary
 Library           .idea/com/scripts/ChromeDriverAutomation.py
 Library           .idea/com/scripts/run_pabot.py
+Library           .idea/com/scripts/screenshot.py
 
 
 *** Variables ***
@@ -19,6 +20,21 @@ ${excel_path}     C:/Users/fitim/AppData/Local/Programs/Python/Python37/test.xls
 ${update}         ${EMPTY}
 
 *** Test Cases ***
+[Documentation]
+Get Full Page Screenshot
+    Open Browser    https://dzone.com/articles/perform-actions-using-javascript-in-python-seleniu    chrome
+    Capture Full Page Screenshot
+    Close Browser
+
+Get Full Page
+    Open Browser    https://stackoverflow.com/    chrome
+    Capture Full Page
+    Close Browser
+
+Get Full Page2
+    take_fullpage_sceenshot   https://dzone.com/articles/perform-actions-using-javascript-in-python-seleniu
+
+
 run-pabot-test-suites
     pabot
 
