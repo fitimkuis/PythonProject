@@ -13,6 +13,7 @@ Library           SeleniumLibrary
 Library           .idea/com/scripts/ChromeDriverAutomation.py
 Library           .idea/com/scripts/run_pabot.py
 Library           .idea/com/scripts/screenshot.py
+Library           .idea/com/python/MyListener.py
 
 
 *** Variables ***
@@ -20,6 +21,9 @@ ${excel_path}     C:/Users/fitim/AppData/Local/Programs/Python/Python37/test.xls
 ${update}         ${EMPTY}
 
 *** Test Cases ***
+Iterate Dictionary
+    loop
+
 [Documentation]
 Get Full Page Screenshot
     Open Browser    https://dzone.com/articles/perform-actions-using-javascript-in-python-seleniu    chrome
@@ -112,3 +116,10 @@ excel-keyword
     Comment    ${cell}    read_excel_file
     Comment    Log    ${cell}
     Comment    Should be equal    ${cell}    A1
+
+loop
+    ${mydict}    Create Dictionary      a=1    b=2      c=3     d=4
+    ${items}     Get Dictionary Items   ${mydict}
+    :FOR    ${key}    ${value}    IN    @{items}
+    \    Log     The current key is: ${key}
+    \    Log     The value is: ${value}
