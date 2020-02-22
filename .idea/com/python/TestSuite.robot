@@ -2,8 +2,11 @@
 Documentation    Suite description
 Library          SeleniumLibrary
 Library          Collections
+Variables        .idea/com/python/dict_variables.py
 
 *** Test Cases ***
+DictionaryVariablesPythonFile
+    dictVariables
 
 SimpleFireFoxTest
     Firefox
@@ -31,6 +34,18 @@ Foo Test Case
     OpenGoogle
 
 *** Keywords ***
+
+dictVariables
+    Log   ${FINNISH.cat}
+    LogMany   ${SALARIES.Pat}    ${SALARIES.Mat}
+    :FOR    ${key}    IN    @{SALARIES.keys()}
+    \   Log    ${SALARIES["${key}"]}
+    ${items}     Get Dictionary Items   ${SALARIES}
+    :FOR    ${key}    ${value}    IN    @{items}
+    \    Log     The current key is: ${key}
+    \    Log     The value is: ${value}
+
+
 Provided precondition
     Setup system under test
 
