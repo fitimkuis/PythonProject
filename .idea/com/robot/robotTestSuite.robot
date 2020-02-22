@@ -24,6 +24,11 @@ ${update}         ${EMPTY}
 Iterate Dictionary
     loop
 
+SimpleFirefoxGoogleTest
+    Open Browser    https://www.google.com    FireFox
+    Sleep   4
+    Close Browser
+
 [Documentation]
 Get Full Page Screenshot
     Open Browser    https://dzone.com/articles/perform-actions-using-javascript-in-python-seleniu    chrome
@@ -51,6 +56,7 @@ exel-lib
 
 Browser-test
     open-google-firefox
+    Close All Browsers
 
 *** Keywords ***
 
@@ -67,6 +73,7 @@ update-drivers
     Log        ${update}
 open-google-firefox
     Open Browser    https://www.google.com      ff
+    Sleep   5
     Close Browser
 
 add date to date
