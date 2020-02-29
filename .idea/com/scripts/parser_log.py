@@ -37,15 +37,15 @@ if __name__ == '__main__':
             names.append(line.rstrip('\n').split('.')[0])
     uniq = set(names)
     for x in uniq:
-        markers = [x,'cpp:']
+        markers = [x,'cpp']
         data = parse_log(log_file, markers)
         #print(type(data))
         print(data)
         #list_of_unique_dicts=list(np.unique(np.array(data).astype(str)))
         #print(list_of_unique_dicts)
 
-    for marker in markers:
-        result = data[marker]
-        print(result.average)
-        print(result.max_value)
-        print(result.min_value)
+        for marker in markers:
+            result = data[marker]
+            print(result.average)
+            print(result.max_value)
+            print(result.min_value)
