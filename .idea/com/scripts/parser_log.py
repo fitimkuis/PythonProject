@@ -28,9 +28,17 @@ def parse_log(file_path: str, markers: List[str]):
     return result
 
 if __name__ == '__main__':
-    markers = ['tidii.something1']
-    data = parse_log('./file.txt', markers)
-    print(data)
+
+    names = []
+    log_file = r'C:\Users\fitim\IdeaProjects\PythonProject\RobotFramework\.idea\com\scripts\Parser Output 2020-02-29 20-53-59.txt'
+    with open(log_file, "r") as file:
+        for line in file:
+            names.append(line.rstrip('\n').split('.')[0])
+    print (set(names))
+    for x in names:
+        markers = [x,'cpp:']
+        data = parse_log(log_file, markers)
+        print(data)
     for marker in markers:
         result = data[marker]
         print(result.average)
