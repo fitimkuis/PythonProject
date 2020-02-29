@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List
+import numpy as np
 
 @dataclass
 class MarkerResult:
@@ -34,11 +35,15 @@ if __name__ == '__main__':
     with open(log_file, "r") as file:
         for line in file:
             names.append(line.rstrip('\n').split('.')[0])
-    print (set(names))
-    for x in names:
+    uniq = set(names)
+    for x in uniq:
         markers = [x,'cpp:']
         data = parse_log(log_file, markers)
+        #print(type(data))
         print(data)
+        #list_of_unique_dicts=list(np.unique(np.array(data).astype(str)))
+        #print(list_of_unique_dicts)
+
     for marker in markers:
         result = data[marker]
         print(result.average)
