@@ -51,7 +51,7 @@ def get_values(uniq, log_file):
             print(result.average)
             print(result.max_value)
             print(result.min_value)
-            str_calc = x+ " "+ str(result.average)+" "+ str(result.max_value)+" "+str(result.min_value)
+            str_calc = "task name: "+x+ " average: "+str(result.average)+" max: "+ str(result.max_value)+" min: "+str(result.min_value)
             calc_values.append(str_calc)
     return calc_values
 

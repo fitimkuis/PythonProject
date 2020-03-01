@@ -49,8 +49,10 @@ parseLogFile
      Log     ${result}
      ${string}    Convert To String     ${result}
      @{words}     Split String    ${string}   ,
+     Create File    ${CURDIR}${/}tasks_duration.txt
      :FOR   ${i}    IN    @{words}
         Log    ${i}
+        Append To File      ${CURDIR}${/}tasks_duration.txt     ${i}${\n}
      END
 
 
