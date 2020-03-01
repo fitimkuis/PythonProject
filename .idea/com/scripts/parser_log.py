@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List
-import numpy as np
+
 
 @dataclass
 class MarkerResult:
@@ -30,6 +30,10 @@ def parse_log(file_path: str, markers: List[str]):
 
 if __name__ == '__main__':
 
+    line = "CClientProfile. duration :425ms (0h 0min 0sec)"
+    value = line.rsplit(':', 1)[-1]  #'425ms (0h 0min 0sec)'
+    value2 = value.rsplit('ms', 1)[0]  #'425'
+
     names = []
     log_file = r'C:\Users\fitim\IdeaProjects\PythonProject\RobotFramework\.idea\com\scripts\Parser Output 2020-02-29 20-53-59.txt'
     with open(log_file, "r") as file:
@@ -37,7 +41,8 @@ if __name__ == '__main__':
             names.append(line.rstrip('\n').split('.')[0])
     uniq = set(names)
     for x in uniq:
-        markers = [x,'cpp']
+        markers = [x, 'cpp']
+        #markers = [x]
         data = parse_log(log_file, markers)
         #print(type(data))
         print(data)
