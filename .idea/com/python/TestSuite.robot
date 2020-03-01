@@ -46,7 +46,7 @@ parseLogFile
      Log    ${list}
     #:FOR     ${i}    IN    ${list}
      ${result}   get_values      ${list}      ${CURDIR}${/}tasks_log.txt
-     #Log     ${result}
+     Log     ${result}
      ${string}    Convert To String     ${result}
      @{words}     Split String    ${string}   ,
      :FOR   ${i}    IN    @{words}

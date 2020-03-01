@@ -19,12 +19,14 @@ def parse_log(file_path: str, markers: List[str]):
                 if marker in line:
                     value = line.rsplit(':', 1)[-1]
                     tmp_result[marker].append(float(value))
+
     result = {}
     for key in tmp_result:
         values = tmp_result[key]
         max_value = None if not values else max(values)
         min_value = None if not values else min(values)
         average = None if not values else sum(values)/len(values)
+        average = round(average,2)
         result[key] = MarkerResult(max_value, min_value, average)
     return result
 
