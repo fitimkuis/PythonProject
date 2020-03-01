@@ -1,10 +1,16 @@
 *** Settings ***
 Documentation    Suite description
 Library          SeleniumLibrary
+Library          OperatingSystem
+Library          String
 Library          Collections
 Variables        .idea/com/python/dict_variables.py
+Library          .idea/com/scripts/parser_log.py
 
 *** Test Cases ***
+
+LogParser
+    parseLogFile
 DictionaryVariablesPythonFile
     dictVariables
 
@@ -34,6 +40,19 @@ Foo Test Case
     OpenGoogle
 
 *** Keywords ***
+parseLogFile
+     ${list}    Create List
+     ${list}   get_unique_task_names       ${CURDIR}${/}tasks_log.txt
+     Log    ${list}
+    #:FOR     ${i}    IN    ${list}
+     ${result}   get_values      ${list}      ${CURDIR}${/}tasks_log.txt
+     #Log     ${result}
+     ${string}    Convert To String     ${result}
+     @{words}     Split String    ${string}   ,
+     :FOR   ${i}    IN    @{words}
+        Log    ${i}
+     END
+
 
 dictVariables
     Log   ${FINNISH.cat}

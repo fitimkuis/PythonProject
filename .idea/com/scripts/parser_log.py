@@ -28,9 +28,34 @@ def parse_log(file_path: str, markers: List[str]):
         result[key] = MarkerResult(max_value, min_value, average)
     return result
 
+def get_unique_task_names(path):
+    names = []
+    log_file = path
+    with open(log_file, "r") as file:
+        for line in file:
+            names.append(line.rstrip('\n').split('.')[0])
+    uniq = set(names)
+    return uniq
+
+def get_values(uniq, log_file):
+    calc_values = []
+    str_calc = ''
+    for x in uniq:
+        markers = [x, 'cpp']
+        #markers = [x]
+        data = parse_log(log_file, markers)
+        for marker in markers:
+            result = data[marker]
+            print(result.average)
+            print(result.max_value)
+            print(result.min_value)
+            str_calc = x+ " "+ str(result.average)+" "+ str(result.max_value)+" "+str(result.min_value)
+            calc_values.append(str_calc)
+    return calc_values
+
 if __name__ == '__main__':
 
-    line = "CClientProfile. duration :425ms (0h 0min 0sec)"
+    line = "CClientProfile for Task duration :425ms (0h 0min 0sec)"
     value = line.rsplit(':', 1)[-1]  #'425ms (0h 0min 0sec)'
     value2 = value.rsplit('ms', 1)[0]  #'425'
 
