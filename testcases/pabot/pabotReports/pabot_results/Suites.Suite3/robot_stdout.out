@@ -1,0 +1,18 @@
+==============================================================================
+Suites                                                                        
+==============================================================================
+Suites.Suite3                                                                 
+==============================================================================
+Verify static data on web page                                        | FAIL |
+ElementClickInterceptedException: Message: element click intercepted: Element <div class="spinner">...</div> is not clickable at point (693, 324). Other element would receive the click: <span class="oc-icon speed-progress-indicator-icon oc-icon-refresh" id="speed-progress-indicator-icon">...</span>
+  (Session info: chrome=80.0.3987.132)
+------------------------------------------------------------------------------
+Suites.Suite3                                                         | FAIL |
+1 critical test, 0 passed, 1 failed
+1 test total, 0 passed, 1 failed
+==============================================================================
+Suites                                                                | FAIL |
+1 critical test, 0 passed, 1 failed
+1 test total, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\.idea\com\python\pabot\pabotReports\pabot_results\Suites.Suite3\output.xml
