@@ -4,9 +4,10 @@ Library          SeleniumLibrary
 Library          OperatingSystem
 Library          String
 Library          Collections
-Variables        .idea/com/python/dict_variables.py
-Library          .idea/com/scripts/parser_log.py
-Library           Timer
+Variables        variables/dict_variables.py
+Library          scripts/parser_log.py
+Library          Timer
+Resource         keywords/TestSuiteKeywords.robot
 #Test Setup        Benchmark Setup
 #Test Teardown     Benchmark TearDown
 
@@ -19,7 +20,7 @@ Start And Stop
   Status UI Log               GuiStatus Demo
   ${count}=                   Set Variable    50
   Status UI Progressbar       ${count}
-  :FOR   ${tick}   IN RANGE    ${count}
+  FOR   ${tick}   IN RANGE    ${count}
       Status UI Log           Processing ${tick}/${count}
       Status UI Action        step
   END
@@ -101,55 +102,3 @@ Foo Test Case
     ${ret}              My Foo Bar Keyword  ${robotVar}
     Log                 ${ret}
     OpenGoogle
-
-*** Keywords ***
-Benchmark Setup
-  Configure Timer   3 seconds   0 seconds   ${TEST NAME}
-  Start Timer   ${TEST NAME}
-
-Benchmark TearDown
-  Stop Timer    ${TEST NAME}
-  Verify Single Timer    3 seconds   0 seconds   ${TEST NAME}
-
-parseLogFile
-     ${list}    Create List
-     ${list}   get_unique_task_names       ${CURDIR}${/}tasks_log.txt
-     Log    ${list}
-    #:FOR     ${i}    IN    ${list}
-     ${result}   get_values      ${list}      ${CURDIR}${/}tasks_log.txt
-     Log     ${result}
-     ${string}    Convert To String     ${result}
-     @{words}     Split String    ${string}   ,
-     Create File    ${CURDIR}${/}tasks_duration.txt
-     :FOR   ${i}    IN    @{words}
-        Log    ${i}
-        Append To File      ${CURDIR}${/}tasks_duration.txt     ${i}${\n}
-     END
-
-dictVariables
-    Log   ${FINNISH.cat}
-    LogMany   ${SALARIES.Pat}    ${SALARIES.Mat}
-    :FOR    ${key}    IN    @{SALARIES.keys()}
-    \   Log    ${SALARIES["${key}"]}
-    ${items}     Get Dictionary Items   ${SALARIES}
-    :FOR    ${key}    ${value}    IN    @{items}
-    \    Log     The current key is: ${key}
-    \    Log     The value is: ${value}
-
-
-Provided precondition
-    Setup system under test
-
-Firefox
-    Open Browser    https://www.google.com    firefox
-    Sleep    4
-    Close Browser
-
-IgnoreSSLCertification
-    ${chrome default caps}    Evaluate    sys.modules['selenium.webdriver'].common.desired_capabilities.DesiredCapabilities.CHROME    sys, selenium.webdriver
-    ${list}    Create List    --ignore-ssl-errors    --allow-insecure-localhost    --allow-running-insecure-content
-    ${args}    Create Dictionary    args=${list}
-    #Set To Dictionary   ${args}     chromeOptions    ${chrome default caps}
-    Set To Dictionary    ${args}    acceptSslCerts    ${True}
-    ${DESIRED_CAPABILITIES}    Create Dictionary    chromeOptions=${args}
-    [Return]    ${DESIRED_CAPABILITIES}
