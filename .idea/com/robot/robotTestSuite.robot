@@ -1,6 +1,7 @@
 *** Settings ***
 
 #Suite Setup      update-drivers
+Suite TearDown    Close All Browsers
 
 Library           DateTime
 Library           String
@@ -13,7 +14,7 @@ Library           SeleniumLibrary
 Library           .idea/com/scripts/ChromeDriverAutomation.py
 Library           .idea/com/scripts/run_pabot.py
 Library           .idea/com/scripts/screenshot.py
-Library           .idea/com/python/MyListener.py
+#Library           .idea/com/python/MyListener.py
 
 
 *** Variables ***
@@ -36,16 +37,19 @@ Get Full Page Screenshot
     Close Browser
 
 Get Full Page
-    Open Browser    https://stackoverflow.com/    chrome
+    Open Browser    https://stackoverflow.com/    chrome    headlesschrome
     Capture Full Page
     Close Browser
 
 Get Full Page2
     take_fullpage_sceenshot   https://dzone.com/articles/perform-actions-using-javascript-in-python-seleniu
 
-
 run-pabot-test-suites
     pabot
+    rebot
+
+combine test results
+    rebot
 
 date-time
     add date to date
@@ -61,7 +65,10 @@ Browser-test
 *** Keywords ***
 
 pabot
-    execute_pabot
+    run_pabot.Execute Pabot
+
+rebot
+    run_pabot.Execute Rebot
 
 download-chromedriver
     download_chromedriver

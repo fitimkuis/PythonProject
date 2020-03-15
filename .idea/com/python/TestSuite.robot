@@ -7,8 +7,8 @@ Library          Collections
 Variables        .idea/com/python/dict_variables.py
 Library          .idea/com/scripts/parser_log.py
 Library           Timer
-Test Setup        Benchmark Setup
-Test Teardown     Benchmark TearDown
+#Test Setup        Benchmark Setup
+#Test Teardown     Benchmark TearDown
 
 #Library           GuiStatusKeywords
 #Suite Setup       Start Status UI
@@ -75,9 +75,14 @@ DictionaryVariablesPythonFile
 SimpleFireFoxTest
     Firefox
 
+Chrome
+    Open Browser    http://robotframework.org/     headlesschrome
+    Capture Page Screenshot
+    [Teardown]    Close All Browsers
+
 OpenChromeBrowser
     ${DESIRED_CAPABILITIES}    IgnoreSSLCertification
-    Open Browser    https://www.google.com    chrome    desired_capabilities=${DESIRED_CAPABILITIES}
+    Open Browser    https://www.google.com    headlesschrome    desired_capabilities=${DESIRED_CAPABILITIES}
     Sleep    2
     Close Browser
 
@@ -144,6 +149,7 @@ IgnoreSSLCertification
     ${chrome default caps}    Evaluate    sys.modules['selenium.webdriver'].common.desired_capabilities.DesiredCapabilities.CHROME    sys, selenium.webdriver
     ${list}    Create List    --ignore-ssl-errors    --allow-insecure-localhost    --allow-running-insecure-content
     ${args}    Create Dictionary    args=${list}
+    #Set To Dictionary   ${args}     chromeOptions    ${chrome default caps}
     Set To Dictionary    ${args}    acceptSslCerts    ${True}
     ${DESIRED_CAPABILITIES}    Create Dictionary    chromeOptions=${args}
     [Return]    ${DESIRED_CAPABILITIES}
