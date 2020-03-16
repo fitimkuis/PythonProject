@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List
+import subprocess
+import pytest
 
 
 @dataclass
@@ -55,7 +57,15 @@ def get_values(uniq, log_file):
             calc_values.append(str_calc)
     return calc_values
 
+def run_pytest():
+    pass
+
+def execute_pytest():
+    subprocess.call([r'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\scripts\pytest.bat'])
+
 if __name__ == '__main__':
+
+    #execute_pytest()
 
     line = "CClientProfile for Task duration :425ms (0h 0min 0sec)"
     value = line.rsplit(':', 1)[-1]  #'425ms (0h 0min 0sec)'

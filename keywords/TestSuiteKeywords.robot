@@ -69,9 +69,10 @@ excel-keyword
 loop
     ${mydict}    Create Dictionary      a=1    b=2      c=3     d=4
     ${items}     Get Dictionary Items   ${mydict}
-    :FOR    ${key}    ${value}    IN    @{items}
-    \    Log     The current key is: ${key}
-    \    Log     The value is: ${value}
+    FOR    ${key}    ${value}    IN    @{items}
+         Log     The current key is: ${key}
+         Log     The value is: ${value}
+    END
 
 Benchmark Setup
   Configure Timer   3 seconds   0 seconds   ${TEST NAME}
@@ -91,7 +92,7 @@ parseLogFile
      ${string}    Convert To String     ${result}
      @{words}     Split String    ${string}   ,
      Create File    ${CURDIR}${/}tasks_duration.txt
-     :FOR   ${i}    IN    @{words}
+     FOR   ${i}    IN    @{words}
         Log    ${i}
         Append To File      ${CURDIR}${/}tasks_duration.txt     ${i}${\n}
      END
@@ -99,12 +100,14 @@ parseLogFile
 dictVariables
     Log   ${FINNISH.cat}
     LogMany   ${SALARIES.Pat}    ${SALARIES.Mat}
-    :FOR    ${key}    IN    @{SALARIES.keys()}
-    \   Log    ${SALARIES["${key}"]}
+    FOR    ${key}    IN    @{SALARIES.keys()}
+        Log    ${SALARIES["${key}"]}
+    END
     ${items}     Get Dictionary Items   ${SALARIES}
-    :FOR    ${key}    ${value}    IN    @{items}
-    \    Log     The current key is: ${key}
-    \    Log     The value is: ${value}
+    FOR    ${key}    ${value}    IN    @{items}
+         Log     The current key is: ${key}
+         Log     The value is: ${value}
+    END
 
 
 Provided precondition
