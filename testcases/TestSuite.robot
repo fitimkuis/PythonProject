@@ -8,6 +8,7 @@ Variables        variables/dict_variables.py
 Library          scripts/parser_log.py
 Library          Timer
 Resource         keywords/TestSuiteKeywords.robot
+Library          scripts/list_values.py
 #Test Setup        Benchmark Setup
 #Test Teardown     Benchmark TearDown
 

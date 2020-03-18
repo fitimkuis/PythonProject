@@ -1,6 +1,3 @@
-*** Settings ***
-Library    variables/dict_variables.py
-Library    scripts/list_values.py
 *** Keywords ***
 pabot
     run_pabot.Execute Pabot

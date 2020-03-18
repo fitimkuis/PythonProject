@@ -12,11 +12,11 @@ my_dict = {}
 for i in range (10):
     x = fake.name()
     name = x.split(' ')
-    print(name[0])
+    #print(name[0])
     y = random.randint(40,55)
     my_dict[name[0]] = y
 
-print("Dictionary is {}: ".format(my_dict))
+#print("Dictionary is {}: ".format(my_dict))
 
 #DICT__MYORDRDICT= OrderedDict([("Timo", 54)])
 
@@ -25,12 +25,12 @@ d = {}
 for x in range (5):
     x = fake.name()
     name = x.split(' ')
-    print(name[0])
+    #print(name[0])
     y = random.randint(40,55)
     d[name[0]] = y
     DICT__MYORDRDICT.update(d)
 
-print(DICT__MYORDRDICT)
+#print(DICT__MYORDRDICT)
 
 
 def dynamic_list_variables(count=5):
@@ -41,5 +41,5 @@ def dynamic_list_variables(count=5):
     return JOB
 
 LIST__JOBS = dynamic_list_variables(5)
-print(LIST__JOBS)
+#print(LIST__JOBS)
 

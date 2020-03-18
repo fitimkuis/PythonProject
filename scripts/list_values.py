@@ -12,6 +12,7 @@ def __list_variables(count):
 
 def generate_works(cnt):
     LIST__WORKS = __list_variables(int(cnt))
+    #print(LIST__WORKS)
     return LIST__WORKS
     #print(LIST__WORKS)
 #LIST__WORKS = LIST__JO
