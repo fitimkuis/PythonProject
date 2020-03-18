@@ -74,6 +74,9 @@ LogParser
 DictionaryVariablesPythonFile
     dictVariables
 
+ListVariablesPythonFileKeyword
+    listvariables
+
 SimpleFireFoxTest
     Firefox
 

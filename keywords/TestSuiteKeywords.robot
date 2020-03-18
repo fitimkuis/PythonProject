@@ -1,3 +1,6 @@
+*** Settings ***
+Library    variables/dict_variables.py
+Library    scripts/list_values.py
 *** Keywords ***
 pabot
     run_pabot.Execute Pabot
@@ -86,7 +89,7 @@ parseLogFile
      ${list}    Create List
      ${list}   get_unique_task_names       ${CURDIR}${/}tasks_log.txt
      Log    ${list}
-    #:FOR     ${i}    IN    ${list}
+    #FOR     ${i}    IN    ${list}
      ${result}   get_values      ${list}      ${CURDIR}${/}tasks_log.txt
      Log     ${result}
      ${string}    Convert To String     ${result}
@@ -98,17 +101,41 @@ parseLogFile
      END
 
 dictVariables
-    Log   ${FINNISH.cat}
+    Log    ${MYORDRDICT}
+    ${items}     Get Dictionary Items   ${MYORDRDICT}
+    FOR    ${key}    ${value}    IN    @{items}    #iterate dynamic orderdict
+         Log     The current key is: ${key}
+         Log     The value is: ${value}
+    END
+    Log    ${FINNISH.cat}
     LogMany   ${SALARIES.Pat}    ${SALARIES.Mat}
     FOR    ${key}    IN    @{SALARIES.keys()}
         Log    ${SALARIES["${key}"]}
     END
-    ${items}     Get Dictionary Items   ${SALARIES}
+    ${items}     Get Dictionary Items   ${SALARIES}    #iterate static defined orderdict
     FOR    ${key}    ${value}    IN    @{items}
          Log     The current key is: ${key}
          Log     The value is: ${value}
     END
 
+listvariables
+    [arguments]
+    Log    ${JOBS}
+    ${cnt}=    Get length    ${JOBS}    #get list lenght
+    Log    ${cnt}
+    ${y}    Convert To Integer    ${cnt}    #convert list lenght to integer
+    FOR    ${index}    IN RANGE    ${y}     #static count given by code
+        Log    ${JOBS}[${index}]
+    END
+    #Generate dynamic works list number given by user
+    @{WORKS}    Generate Works    10
+    Log    ${WORKS}
+    ${cnt}=    Get length    ${WORKS}    #get list lenght
+    Log    ${cnt}
+    ${y}    Convert To Integer    ${cnt}    #convert list lenght to integer
+    FOR    ${index}    IN RANGE    ${y}
+        Log    ${WORKS}[${index}]
+    END
 
 Provided precondition
     Setup system under test
