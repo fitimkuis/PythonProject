@@ -1,3 +1,7 @@
+*** Settings ***
+Library           webcolors
+Library           scripts/convert_rgb.py
+
 *** Keywords ***
 pabot
     run_pabot.Execute Pabot
@@ -150,3 +154,11 @@ IgnoreSSLCertification
     Set To Dictionary    ${args}    acceptSslCerts    ${True}
     ${DESIRED_CAPABILITIES}    Create Dictionary    chromeOptions=${args}
     [Return]    ${DESIRED_CAPABILITIES}
+
+getElementColour
+    Open Browser    http://demoaut.katalon.com/    chrome
+    ${bgcolor}    Execute Javascript    return document.defaultView.getComputedStyle(document.getElementById("btn-make-appointment"),null)['background-color']
+    Log    ${bgcolor}
+    ${col}=   fetch_colour_name    ${bgcolor}
+    Log    ${col}
+    Close Browser

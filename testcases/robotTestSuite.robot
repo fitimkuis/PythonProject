@@ -1,5 +1,5 @@
 *** Settings ***
-
+Library           webcolors
 #Suite Setup      update-drivers
 Suite TearDown    Close All Browsers
 
@@ -61,5 +61,8 @@ exel-lib
 Browser-test
     open-google-firefox
     Close All Browsers
+
+ElementBackColour
+    getElementColour
 
 

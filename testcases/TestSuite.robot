@@ -9,6 +9,7 @@ Library          scripts/parser_log.py
 Library          Timer
 Resource         keywords/TestSuiteKeywords.robot
 Library          scripts/list_values.py
+Library          webcolors
 #Test Setup        Benchmark Setup
 #Test Teardown     Benchmark TearDown
 
