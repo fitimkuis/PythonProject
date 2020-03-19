@@ -1,5 +1,6 @@
 *** Settings ***
 Library           webcolors
+Library           scripts/Colour.py
 #Suite Setup      update-drivers
 Suite TearDown    Close All Browsers
 
@@ -10,7 +11,7 @@ Library           scripts/excelUtil.py
 Library           Collections
 Library           OperatingSystem
 Library           excelUtil
-Library           SeleniumLibrary
+Library           SeleniumLibrary    plugins=SeleniumTestability;True;30 Seconds;True
 Library           scripts/ChromeDriverAutomation.py
 Library           scripts/run_pabot.py
 Library           scripts/screenshot.py

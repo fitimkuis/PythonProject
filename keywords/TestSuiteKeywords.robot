@@ -1,7 +1,6 @@
 *** Settings ***
-Library           webcolors
-Library           scripts/convert_rgb.py
-
+#Library           webcolors
+#Library           scripts/convert_rgb.py
 *** Keywords ***
 pabot
     run_pabot.Execute Pabot
@@ -161,8 +160,9 @@ getElementColour
     Should Be True    ${x}
     ${bgcolor}    Execute Javascript    return document.defaultView.getComputedStyle(document.getElementById("btn-make-appointment"),null)['background-color']
     Log    ${bgcolor}
-    ${col}=   fetch_colour_name    ${bgcolor}
+    ${col}=   Colour.fetch_colour_name    ${bgcolor}
     Log    ${col}
+    ${hex}    Colour.convert_to_hex
     Click Element    btn-make-appointment
     #Wait For Testability Ready
     Input Text    txt-username    John Doe
@@ -170,6 +170,7 @@ getElementColour
     Click Element    btn-login
     #Wait For Testability Ready
     ${bgcolor}    Execute Javascript    return document.defaultView.getComputedStyle(document.getElementById("combo_facility"),null)['background-color']
-    ${col}=   fetch_colour_name    ${bgcolor}
+    ${col}=   Colour.fetch_colour_name    ${bgcolor}
     Log    ${col}
+    ${hex}    Colour.convert_to_hex
     Close Browser

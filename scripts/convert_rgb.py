@@ -34,8 +34,13 @@ def fetch_colour_name(rgb):
     requested_colour = (my_list[0], my_list[1], my_list[2])
     actual_name, closest_name = get_colour_name(requested_colour)
     print ("Actual colour name:", actual_name, ", closest colour name:", closest_name)
+    #convert_to_hex(requested_colour)
     return closest_name
 
+def convert_to_hex(rgb):
+    hex = '#{:02x}{:02x}{:02x}'.format(rgb)
+    print(hex)
+    return hex
 
 
 
