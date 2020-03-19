@@ -21,11 +21,16 @@ def get_colour_name(requested_colour):
 
 def fetch_colour_name(rgb):
     print(rgb)
-    rgb = rgb.replace('rgba','')
-    print(rgb)
-    tup = eval(rgb)
-    my_list = list(tup)
-    my_list.pop(3)
+    if 'rgba' in rgb:
+        rgb = rgb.replace('rgba','')
+        tup = eval(rgb)
+        my_list = list(tup)
+        my_list.pop(3)
+    else:
+        rgb = rgb.replace('rgb','')
+        tup = eval(rgb)
+        my_list = list(tup)
+
     requested_colour = (my_list[0], my_list[1], my_list[2])
     actual_name, closest_name = get_colour_name(requested_colour)
     print ("Actual colour name:", actual_name, ", closest colour name:", closest_name)

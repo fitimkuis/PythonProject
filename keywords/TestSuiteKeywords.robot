@@ -157,8 +157,19 @@ IgnoreSSLCertification
 
 getElementColour
     Open Browser    http://demoaut.katalon.com/    chrome
+    ${x}=   Is Testability Installed
+    Should Be True    ${x}
     ${bgcolor}    Execute Javascript    return document.defaultView.getComputedStyle(document.getElementById("btn-make-appointment"),null)['background-color']
     Log    ${bgcolor}
+    ${col}=   fetch_colour_name    ${bgcolor}
+    Log    ${col}
+    Click Element    btn-make-appointment
+    #Wait For Testability Ready
+    Input Text    txt-username    John Doe
+    Input Text    txt-password     ThisIsNotAPassword
+    Click Element    btn-login
+    #Wait For Testability Ready
+    ${bgcolor}    Execute Javascript    return document.defaultView.getComputedStyle(document.getElementById("combo_facility"),null)['background-color']
     ${col}=   fetch_colour_name    ${bgcolor}
     Log    ${col}
     Close Browser
