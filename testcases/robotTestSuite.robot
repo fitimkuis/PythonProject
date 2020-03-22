@@ -17,6 +17,9 @@ Library           scripts/run_pabot.py
 Library           scripts/screenshot.py
 Resource          keywords/TestSuiteKeywords.robot
 #Library           .idea/com/python/MyListener.py
+Library           scripts/json_example.py
+Library           requests
+Library           JSONLibrary
 
 *** Variables ***
 ${excel_path}     C:/Users/fitim/AppData/Local/Programs/Python/Python37/test.xls
@@ -65,5 +68,8 @@ Browser-test
 
 ElementBackColour
     getElementColour
+
+getJsonDictionary
+    test dictionary
 
 

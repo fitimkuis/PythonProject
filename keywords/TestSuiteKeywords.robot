@@ -174,3 +174,39 @@ getElementColour
     Log    ${col}
     ${hex}    Colour.convert_to_hex
     Close Browser
+
+test dictionary
+    ${result} =  get  http://api.zippopotam.us/us/ma/belmont
+    Should Be Equal  ${result.status_code}  ${200}
+    ${json} =  Set Variable  ${result.json()}
+    ${longitude}=    Get Value From Json    ${json}    $..longitude    #return list
+    Log    ${longitude[0]}
+    ${latitude}=    Get Value From Json    ${json}    $..longitude    #return list
+    Log    ${latitude[0]}
+    ${zip}=    Set Variable    post code    #key has space
+    ${postal code}=    Get Value From Json    ${json}    $..'${zip}'    #return list
+    Log    ${postal code[0]}
+    FOR    ${key}    IN    @{json.keys()}
+        Log    ${json["${key}"]}
+    END
+    ${country} =  Get From Dictionary  ${json}  country abbreviation
+    Should Be Equal  ${country}  US
+    ${places} =  Get From Dictionary  ${json}  places
+    #Log    ${places[0].longitude}
+    Log    ${places[0]}
+    FOR    ${place}    IN    ${places}
+        ${place name}=    Get From Dictionary   ${json}    place name
+        ${state}    Get From Dictionary   ${json}    state
+        ${val}    Get Value From Json    ${json}    $..longitude
+    END
+
+    #${json data}   get_json_dict
+    #${source data}=    Evaluate     ${json data}    json
+    #Log    {ret}
+    #@{all data members}=    Set Variable     ${source data['country abbreviation']}
+    #${dictvalues}=    Create Dictionary
+    #FOR    ${member}     IN      @{all data members}   # iterate through the 'data', each ${member} is a dictionary in the source list
+    #    ${name}=    Get From Dictionary   ${member}     name    # will assign to the variable ${name} the value of the key 'name'; if there is no such key - the keyword will fail
+    #    Log    The user ${name} #has a mobile phone: ${member['mobile_phone']}    # Will print "The user John has a mobile phone: False", "The user Jim has a mobile phone: True"
+    #    #Set To Dictionary    ${user_phone}    ${name}   ${member['mobile_phone']}    # will fill-in a dictionary in the form "name": boolean_does_the_person_has_phone
+    #END
