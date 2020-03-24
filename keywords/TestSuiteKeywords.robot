@@ -1,6 +1,9 @@
 *** Settings ***
 #Library           webcolors
 #Library           scripts/convert_rgb.py
+*** Variables ***
+${OS}    Win10
+${JOBS}    RobotTest
 *** Keywords ***
 pabot
     run_pabot.Execute Pabot
@@ -149,10 +152,16 @@ IgnoreSSLCertification
     ${chrome default caps}    Evaluate    sys.modules['selenium.webdriver'].common.desired_capabilities.DesiredCapabilities.CHROME    sys, selenium.webdriver
     ${list}    Create List    --ignore-ssl-errors    --allow-insecure-localhost    --allow-running-insecure-content
     ${args}    Create Dictionary    args=${list}
-    #Set To Dictionary   ${args}     chromeOptions    ${chrome default caps}
+    Set To Dictionary   ${args}     chromeOptions    ${chrome default caps}
     Set To Dictionary    ${args}    acceptSslCerts    ${True}
     ${DESIRED_CAPABILITIES}    Create Dictionary    chromeOptions=${args}
     [Return]    ${DESIRED_CAPABILITIES}
+
+downloadPdfNotView
+    ${list} =     Create List    --start-maximized    --disable-web-security
+    ${args} =     Create Dictionary    args=${list}
+    ${desired caps} =     Create Dictionary    chromeOptions=${args}
+    [Return]    ${desired_caps}
 
 getElementColour
     Open Browser    http://demoaut.katalon.com/    chrome
