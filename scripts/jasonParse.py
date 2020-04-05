@@ -3,6 +3,7 @@ from addict import Dict
 import json
 import csv
 import re
+from dateutil.parser import parse
 from operator import itemgetter
 
 def get_json_dict():
@@ -68,12 +69,38 @@ with open("C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\scripts
 for item in recursive_iter(data):
     print(item)
 
+def is_date(string, fuzzy=False):
+    """
+    Return whether the string can be interpreted as a date.
+    :param string: str, string to check for date
+    :param fuzzy: bool, ignore unknown tokens in string if True
+    """
+    try:
+        parse(string, fuzzy=fuzzy)
+        return True
+
+    except:
+        return False
 
 
 with open('constants_file.csv', mode='w', newline='', encoding='utf-8') as constants_file:
     writer = csv.writer(constants_file)
     for keys, item in recursive_iteration(data):
         print(keys, item)
+
+        s = None
+        reg = None
+        reg = re.compile('\d\d\d\d-\d\d-\d\d\(T\)\d\d:\d\d:\d\d')
+        s = re.sub(r'(.*\d\d\d\d-\d\d-\d\d)T(\d\d:\d\d:\d\d.*)',r'\1 \2',str(item))
+
+        if len(keys) == 1 and is_date(s):
+            lil = []
+            res100 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
+            lil.append(res100)
+            res200 = "".join(re.split("[^a-zA-Z]*", str([item])))
+            lil.append(s)
+            writer.writerow(lil)
+
 
         if len(keys) == 1 and (item == "string" or item == True):
             li = []
