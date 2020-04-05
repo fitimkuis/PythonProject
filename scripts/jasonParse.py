@@ -73,23 +73,51 @@ for item in recursive_iter(data):
 with open('constants_file.csv', mode='w', newline='', encoding='utf-8') as constants_file:
     writer = csv.writer(constants_file)
     for keys, item in recursive_iteration(data):
-        if item == "string" and len(keys) == 1:
-            l = []
+        print(keys, item)
+
+        if len(keys) == 1 and (item == "string" or item == True):
+            li = []
             res1 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
-            l.append(res1)
+            li.append(res1)
             res2 = "".join(re.split("[^a-zA-Z]*", str([item])))
-            l.append(res2)
-            writer.writerow(l)
+            li.append(res2)
+            writer.writerow(li)
 
         if item == "string" and len(keys) == 2:
             l2 = []
-            res1 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
-            l2.append(res1)
-            res2 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
-            l2.append(res2)
-            res3 = "".join(re.split("[^a-zA-Z]*", str([item])))
-            l2.append(res3)
+            res12 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
+            l2.append(res12)
+            res13 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
+            l2.append(res13)
+            res14 = "".join(re.split("[^a-zA-Z]*", str([item])))
+            l2.append(res14)
             writer.writerow(l2)
+
+        if item == "string" and len(keys) == 3:
+            ll = []
+            res00 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
+            ll.append(res00)
+            res01 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
+            ll.append(res01)
+            res02 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[2])))))
+            ll.append(res02)
+            res03 = "".join(re.split("[^a-zA-Z]*", str([item])))
+            ll.append(res03)
+            writer.writerow(ll)
+
+        if item == "string" and len(keys) == 4:
+            lis = []
+            res000 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
+            lis.append(res000)
+            res010 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
+            lis.append(res010)
+            res020 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[2])))))
+            lis.append(res020)
+            res030 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[3])))))
+            lis.append(res030)
+            res040 = "".join(re.split("[^a-zA-Z]*", str([item])))
+            lis.append(res040)
+            writer.writerow(lis)
 
 
 print(keys, item)
