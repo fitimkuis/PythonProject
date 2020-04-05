@@ -16,6 +16,8 @@ Library          webcolors
 #Library           GuiStatusKeywords
 #Suite Setup       Start Status UI
 #Suite Teardown    Stop Status UI
+*** Variables ***
+${BROWSER}    chrome
 
 *** Test Cases ***
 Start And Stop
@@ -91,5 +93,10 @@ OpenChromeBrowser
     ${DESIRED_CAPABILITIES}    IgnoreSSLCertification
     Open Browser    https://www.google.com    headlesschrome    desired_capabilities=${DESIRED_CAPABILITIES}
     Sleep    2
+    Close Browser
+
+DownloadPdfFileWithoutViewIt
+    ${desired caps}    downloadPdfNotView
+    Open Browser    https://www.google.com    browser=${BROWSER}    desired_capabilities=${desired caps}
     Close Browser
 
