@@ -1,0 +1,62 @@
+{
+  "messageType": "CLAIM_CREATED",
+  "messageID": "CC-01",
+  "messageCreatedTime": "2019-05-02T09:12:45.298Z",
+  "claimFromDate": "2019-05-02T09:12:45.298Z",
+  "confirmedAddress": true,
+  "contactDetail": {
+    "email": "string",
+    "homeTelephoneNumber": "string",
+    "mobileTelephoneNumber": "string",
+    "workTelephoneNumber": "string"
+  },
+  "dobVerification": "string",
+  "inviteKey": "string",
+  "livedAbroad": true,
+  "livedPeriodsAbroad": [{
+    "country": "string",
+    "fromDate": {
+      "month": "string",
+      "year": "string"
+    },
+    "referenceNumber": "string",
+    "toDate": {
+      "month": "string",
+      "year": "string"
+    }} ],
+  "maritalStatus": "string",
+  "overseasAccountDetail": {
+    "accountCode": "string",
+    "accountHolder": "string",
+    "accountNumber": "string",
+    "result": "string"
+  },
+  "partnerDetail": {
+    "allOtherNames": "string",
+    "civilPartnershipDate": "2019-05-02T09:12:45.299Z",
+    "dissolvedDate": "2019-05-02T09:12:45.299Z",
+    "divorcedDate": "2019-05-02T09:12:45.299Z",
+    "dob": "2019-05-02T09:12:45.299Z",
+    "firstName": "string",
+    "marriageDate": "2019-05-02T09:12:45.299Z",
+    "surname": "string",
+    "widowedDate": "2019-05-02T09:12:45.299Z"
+  },
+  "reCalculatedSpaDate": "2019-05-02T09:12:45.299Z",
+  "receivingBenefits": true,
+  "userAssertedDob": "2019-05-02T09:12:45.299Z",
+  "welshIndicator": true,
+  "workedAbroad": true,
+  "workedPeriodsAbroad": [{
+    "country": "string",
+    "fromDate": {
+      "month": "string",
+      "year": "string"
+    },
+    "referenceNumber": "string",
+    "toDate": {
+      "month": "string",
+      "year": "string"
+    }
+  }]
+}
