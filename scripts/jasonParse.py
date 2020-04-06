@@ -97,10 +97,8 @@ with open('constants_file.csv', mode='w', newline='', encoding='utf-8') as const
             lil = []
             res100 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
             lil.append(res100)
-            res200 = "".join(re.split("[^a-zA-Z]*", str([item])))
             lil.append(s)
             writer.writerow(lil)
-
 
         if len(keys) == 1 and (item == "string" or item == True):
             li = []
@@ -125,7 +123,7 @@ with open('constants_file.csv', mode='w', newline='', encoding='utf-8') as const
             res00 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
             ll.append(res00)
             res01 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
-            ll.append(res01)
+            #ll.append(res01)
             res02 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[2])))))
             ll.append(res02)
             res03 = "".join(re.split("[^a-zA-Z]*", str([item])))
@@ -137,7 +135,7 @@ with open('constants_file.csv', mode='w', newline='', encoding='utf-8') as const
             res000 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
             lis.append(res000)
             res010 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
-            lis.append(res010)
+            #lis.append(res010)
             res020 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[2])))))
             lis.append(res020)
             res030 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[3])))))
