@@ -90,8 +90,16 @@ with open('constants_file.csv', mode='w', newline='', encoding='utf-8') as const
 
         s = None
         reg = None
-        reg = re.compile('\d\d\d\d-\d\d-\d\d\(T\)\d\d:\d\d:\d\d')
+        #reg = re.compile('\d\d\d\d-\d\d-\d\d\(T\)\d\d:\d\d:\d\d')
         s = re.sub(r'(.*\d\d\d\d-\d\d-\d\d)T(\d\d:\d\d:\d\d.*)',r'\1 \2',str(item))
+
+        if len(keys) == 1 and (is_date(s) != True and item != True):
+            lis0 = []
+            r0 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
+            lis0.append(r0)
+            r2 = "".join(re.split("[^a-zA-Z]*", str(item)))
+            lis0.append(item)
+            writer.writerow(lis0)
 
         if len(keys) == 1 and is_date(s):
             lil = []
@@ -99,6 +107,15 @@ with open('constants_file.csv', mode='w', newline='', encoding='utf-8') as const
             lil.append(res100)
             lil.append(s)
             writer.writerow(lil)
+
+        if len(keys) == 2 and is_date(s):
+            list0 = []
+            r10 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
+            list0.append(r10)
+            r20 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
+            list0.append(r20)
+            list0.append(s)
+            writer.writerow(list0)
 
         if len(keys) == 1 and (item == "string" or item == True):
             li = []
