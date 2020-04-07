@@ -53,6 +53,17 @@ def recursive_iter(obj):
     else:
         yield obj
 
+with open("C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\scripts\\toMultipleCsv.json", "r") as read_file:
+    data = json.load(read_file)
+
+print("######################################################################################")
+for key,value in data.items(): #this gives you both
+    print(key,value)
+print("######################################################################################")
+
+for item in recursive_iter(data):
+    print(item)
+
 def recursive_iteration(obj, keys=()):
     if isinstance(obj, dict):
         for k, v in obj.items():
@@ -62,12 +73,6 @@ def recursive_iteration(obj, keys=()):
             yield from recursive_iteration(item, keys + (idx,))
     else:
         yield keys, obj
-
-with open("C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\scripts\\toMultipleCsv.json", "r") as read_file:
-    data = json.load(read_file)
-
-for item in recursive_iter(data):
-    print(item)
 
 def is_date(string, fuzzy=False):
     """
@@ -86,83 +91,80 @@ def is_date(string, fuzzy=False):
 with open('constants_file.csv', mode='w', newline='', encoding='utf-8') as constants_file:
     writer = csv.writer(constants_file)
     for keys, item in recursive_iteration(data):
-        print(keys, item)
+        #print(keys, item)
 
         s = None
         reg = None
         #reg = re.compile('\d\d\d\d-\d\d-\d\d\(T\)\d\d:\d\d:\d\d')
         s = re.sub(r'(.*\d\d\d\d-\d\d-\d\d)T(\d\d:\d\d:\d\d.*)',r'\1 \2',str(item))
 
-        if len(keys) == 1 and (is_date(s) != True and item != True):
-            lis0 = []
+        if len(keys) == 1 and (is_date(s) != True and item != True and item != "string"):
+            l0 = []
             r0 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
-            lis0.append(r0)
+            l0.append(r0)
             r2 = "".join(re.split("[^a-zA-Z]*", str(item)))
-            lis0.append(item)
-            writer.writerow(lis0)
+            l0.append(item)
+            writer.writerow(l0)
 
         if len(keys) == 1 and is_date(s):
-            lil = []
-            res100 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
-            lil.append(res100)
-            lil.append(s)
-            writer.writerow(lil)
+            l1 = []
+            r3 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
+            l1.append(r3)
+            l1.append(s)
+            writer.writerow(l1)
 
         if len(keys) == 2 and is_date(s):
-            list0 = []
-            r10 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
-            list0.append(r10)
-            r20 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
-            list0.append(r20)
-            list0.append(s)
-            writer.writerow(list0)
-
-        if len(keys) == 1 and (item == "string" or item == True):
-            li = []
-            res1 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
-            li.append(res1)
-            res2 = "".join(re.split("[^a-zA-Z]*", str([item])))
-            li.append(res2)
-            writer.writerow(li)
-
-        if item == "string" and len(keys) == 2:
             l2 = []
-            res12 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
-            l2.append(res12)
-            res13 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
-            l2.append(res13)
-            res14 = "".join(re.split("[^a-zA-Z]*", str([item])))
-            l2.append(res14)
+            r4 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
+            l2.append(r4)
+            r5 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
+            l2.append(r5)
+            l2.append(s)
             writer.writerow(l2)
 
+        if len(keys) == 1 and (item == "string" or item == True):
+            l3 = []
+            r6 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
+            l3.append(r6)
+            r7 = "".join(re.split("[^a-zA-Z]*", str([item])))
+            l3.append(r7)
+            writer.writerow(l3)
+
+        if item == "string" and len(keys) == 2:
+            l4 = []
+            r8= "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
+            l4.append(r8)
+            r9 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
+            l4.append(r9)
+            res10 = "".join(re.split("[^a-zA-Z]*", str([item])))
+            l4.append(res10)
+            writer.writerow(l4)
+
         if item == "string" and len(keys) == 3:
-            ll = []
-            res00 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
-            ll.append(res00)
-            res01 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
+            l5 = []
+            r11 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
+            l5.append(r11)
+            #res01 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
             #ll.append(res01)
-            res02 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[2])))))
-            ll.append(res02)
-            res03 = "".join(re.split("[^a-zA-Z]*", str([item])))
-            ll.append(res03)
-            writer.writerow(ll)
+            r12 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[2])))))
+            l5.append(r12)
+            r13 = "".join(re.split("[^a-zA-Z]*", str([item])))
+            l5.append(r13)
+            writer.writerow(l5)
 
         if item == "string" and len(keys) == 4:
-            lis = []
-            res000 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
-            lis.append(res000)
-            res010 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
+            l6 = []
+            r14 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[0])))))
+            l6.append(r14)
+            #res010 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[1])))))
             #lis.append(res010)
-            res020 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[2])))))
-            lis.append(res020)
-            res030 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[3])))))
-            lis.append(res030)
-            res040 = "".join(re.split("[^a-zA-Z]*", str([item])))
-            lis.append(res040)
-            writer.writerow(lis)
-
-
-print(keys, item)
+            r15 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[2])))))
+            l6.append(r15)
+            r16 = "".join(re.split("[^a-zA-Z]*", str(set(list(list(zip(keys))[3])))))
+            l6.append(r16)
+            r17 = "".join(re.split("[^a-zA-Z]*", str([item])))
+            l6.append(r17)
+            writer.writerow(l6)
 
 
 '''
