@@ -24,6 +24,7 @@ open-google-firefox
     Sleep   5
     Close Browser
 
+
 add date to date
     ${date}    Get Current Date
     ${date}    Convert Date    ${date}    result_format=%y%m%d
@@ -190,32 +191,31 @@ test dictionary
     ${json} =  Set Variable  ${result.json()}
     ${longitude}=    Get Value From Json    ${json}    $..longitude    #return list
     Log    ${longitude[0]}
-    ${latitude}=    Get Value From Json    ${json}    $..longitude    #return list
+    ${latitude}=    Get Value From Json    ${json}    $..latitude    #return list
     Log    ${latitude[0]}
     ${zip}=    Set Variable    post code    #key has space
     ${postal code}=    Get Value From Json    ${json}    $..'${zip}'    #return list
     Log    ${postal code[0]}
+    ${city}=    Get Value From Json    ${json}    $..'place name'    #return list
+    Log    ${city[0]}
     FOR    ${key}    IN    @{json.keys()}
         Log    ${json["${key}"]}
     END
     ${country} =  Get From Dictionary  ${json}  country abbreviation
     Should Be Equal  ${country}  US
     ${places} =  Get From Dictionary  ${json}  places
-    #Log    ${places[0].longitude}
     Log    ${places[0]}
     FOR    ${place}    IN    ${places}
         ${place name}=    Get From Dictionary   ${json}    place name
-        ${state}    Get From Dictionary   ${json}    state
-        ${val}    Get Value From Json    ${json}    $..longitude
+        ${state}=    Get From Dictionary   ${json}    state
+        ${state abbreviation}=    Get From Dictionary    ${json}    state abbreviation
+        ${long}=    Get Value From Json    ${json}    $..longitude
     END
 
-    #${json data}   get_json_dict
-    #${source data}=    Evaluate     ${json data}    json
-    #Log    {ret}
-    #@{all data members}=    Set Variable     ${source data['country abbreviation']}
-    #${dictvalues}=    Create Dictionary
-    #FOR    ${member}     IN      @{all data members}   # iterate through the 'data', each ${member} is a dictionary in the source list
-    #    ${name}=    Get From Dictionary   ${member}     name    # will assign to the variable ${name} the value of the key 'name'; if there is no such key - the keyword will fail
-    #    Log    The user ${name} #has a mobile phone: ${member['mobile_phone']}    # Will print "The user John has a mobile phone: False", "The user Jim has a mobile phone: True"
-    #    #Set To Dictionary    ${user_phone}    ${name}   ${member['mobile_phone']}    # will fill-in a dictionary in the form "name": boolean_does_the_person_has_phone
-    #END
+imap
+    Open Mailbox    host=smtp.gmail.com    user=fitimkuis@gmail.com    password=ModeeMi16
+    ${LATEST}=    Wait for Mail    fromEmail=timo.kuisma@sci.fi    toEmail=fitimkuis@gmail.com    timeout=150
+    Log    ${LATEST}
+    #${HTML}=    Open Link from Mail    ${LATEST}
+    #Comment    Should Contain    ${HTML}    Your email address has been updated
+    Close Mailbox
