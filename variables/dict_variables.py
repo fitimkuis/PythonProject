@@ -40,6 +40,21 @@ def dynamic_list_variables(count=5):
         JOB.append(job)
     return JOB
 
+dict = {('Meraki_Organization_Scenarios', 'failed'),
+        ('Meraki_HttpServer_Scenarios', 'failed'),
+        ('Meraki_HttpServer_Scenarios', 'passed'),
+        ('Meraki_Organization_Scenarios', 'passed'),
+        ('Meraki_Networks_Scenarios', 'failed'),
+        ('Meraki_Networks_Scenarios', 'passed')}
+
 LIST__JOBS = dynamic_list_variables(5)
 #print(LIST__JOBS)
+def ret_failed_as_list():
+    final_results = {}
+    for name, status in dict:
+        current_status = final_results.get(name, 'notset')
+        if current_status != 'failed':
+            final_results[name] = status
+    return list(final_results.items())
 
+print(ret_failed_as_list())

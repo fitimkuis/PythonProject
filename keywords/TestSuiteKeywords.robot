@@ -219,3 +219,14 @@ imap
     #${HTML}=    Open Link from Mail    ${LATEST}
     #Comment    Should Contain    ${HTML}    Your email address has been updated
     Close Mailbox
+
+myKeyword
+    [arguments]    ${x}
+    ${name}=    set Global variable    ${x}
+    [Return]    ${name}
+
+error-handling
+    [arguments]    ${x}
+    Fail    ${x} was not there
+
+

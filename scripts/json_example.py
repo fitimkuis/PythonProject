@@ -64,7 +64,7 @@ data = json.loads(result)
 for x in data:
     print("%s: %s" % (x, data[x]))
 
-res = '{"firstname": "alex", "lastname": "leda", "firstname":"john", "lastname":"parsons",  "firstname":"pat", "lastname":"mat"}'
+res = '{"firstname":"foo", "lastname":"bar", "firstname": "alex", "lastname": "leda", "firstname":"john", "lastname":"parsons",  "firstname":"pat", "lastname":"mat"}'
 obj = json.loads(res)
 
 data = json.loads(res)
@@ -77,9 +77,7 @@ d = d.split(',')
 
 
 
-
 for keys, item in recursive_iteration(res):
-    #print(keys, item)
     r = "".join(re.split("[^a-zA-Z , :]*", str(set(list(list(zip([item]))[0]))))) #remove all unwanted chars
     print(r)
 
@@ -89,7 +87,8 @@ for x in r:
     x = x.split(':')
     print(x[0]+ " "+ x[1])
     if x[1] == 'john':
-        print(x[0]+ " "+ x[1])
+        print("John found: "+x[0]+ " "+ x[1])
+        break
 
 
 '''
