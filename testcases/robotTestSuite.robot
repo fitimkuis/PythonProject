@@ -4,6 +4,8 @@ Library           scripts\\Colour.py
 #Suite Setup      update-drivers
 Suite TearDown    Close All Browsers
 
+Library           SerialLibrary    #loop://    encoding=ascii
+Library           SSHLibrary
 Library           DateTime
 Library           String
 Library           scripts\\date_time.py
@@ -131,7 +133,27 @@ Example2
 imapGmail
     imap
 
+Hello serial test
+     Write Data    Hello World
+     Read Data Should Be    Hello World
 
+Read Until should read until terminator or size
+    [Setup]    Add Port    loop://    timeout=0.1
+    ${bytes} =    Set Variable
+    Write Data    01 23 45 0A 67 89 AB CD EF
+    ${read} =    SerialLibrary.Read Until
+    Should Be Equal As Strings    ${read}    01 23 45 0A
+    ${read} =    SerialLibrary.Read Until    size=2
+    Should Be Equal As Strings    ${read}    67 89
+    #${read} =    SerialLibrary.Read Until    terminator=CD
+    #Should Be Equal As Strings    ${read}    AB CD
+    ${read} =    SerialLibrary.Read Until    size=2
+    Should Be Equal As Strings    ${read}    AB CD
+    ${read} =    SerialLibrary.Read Until    size=1
+    Should Be Equal As Strings    ${read}    EF
+    ${read} =    SerialLibrary.Read Until
+    Should Be Equal As Strings    ${read}    ${EMPTY}
+    [Teardown]    Delete All Ports
 
 
 

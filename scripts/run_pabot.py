@@ -8,3 +8,5 @@ def execute_pabot():
 def execute_rebot():
     subprocess.call([r'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\scripts\run_rebot.bat'])
 
+
+#execute_pabot()
