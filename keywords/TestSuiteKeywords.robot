@@ -1,6 +1,7 @@
 *** Settings ***
 #Library           webcolors
 #Library           scripts/convert_rgb.py
+Variables   variables/counter.py
 *** Variables ***
 ${OS}    Win10
 ${JOBS}    RobotTest
@@ -228,5 +229,9 @@ myKeyword
 error-handling
     [arguments]    ${x}
     Fail    ${x} was not there
+
+Increment Counter
+    Create File    ${CURDIR}/variables/counter.py    counter=${counter+1}
+
 
 

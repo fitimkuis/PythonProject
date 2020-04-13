@@ -158,6 +158,7 @@ Read Until should read until terminator or size
 Increment
     Create File    ${CURDIR}/increment.txt
     ${store}=    Create List
+    ${ret}=    Create List
     Set Suite Variable    ${store}
     ${test}=    Set Variable    test
     ${index}=    Set Variable    ${100}
@@ -172,6 +173,19 @@ Increment
     #read file
     ${content}=    OperatingSystem.Get File    ${CURDIR}/increment.txt    encoding=UTF-8
     Log To Console    ${content}
+    @{lines}=    Split to lines    ${content}
+    FOR    ${line}    IN    @{lines}
+        ${Value}=    Get Variable Value    ${line}    #val from list to variable
+        Append To List    ${ret}    ${line}
+    END
+    ${random value}=    Evaluate   random.choice($ret)    modules=random    #read ramdom value from the list (file)
+    Log To Console    ${random value}
+
+Increment In Every Test Run
+    Log To Console    testcomp${counter}  # here you could also do Input Text or whatever
+    Increment Counter
+
+
 
 
 
