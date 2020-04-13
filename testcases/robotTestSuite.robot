@@ -155,8 +155,23 @@ Read Until should read until terminator or size
     Should Be Equal As Strings    ${read}    ${EMPTY}
     [Teardown]    Delete All Ports
 
-
-
+Increment
+    Create File    ${CURDIR}/increment.txt
+    ${store}=    Create List
+    Set Suite Variable    ${store}
+    ${test}=    Set Variable    test
+    ${index}=    Set Variable    ${100}
+    FOR    ${i}    IN RANGE    10
+        LOG    ${test}${index}
+        Log To Console    ${test}${index}
+        Append To List    ${store}    ${test}${index}    #values in a suite variable
+        Append To File    ${CURDIR}/increment.txt    ${test}${index}\n    encoding=UTF-8    #values in a file
+        ${index}    Evaluate    ${index} + 1
+    END
+    Log To Console     ${store}
+    #read file
+    ${content}=    OperatingSystem.Get File    ${CURDIR}/increment.txt    encoding=UTF-8
+    Log To Console    ${content}
 
 
 
