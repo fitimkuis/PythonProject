@@ -198,11 +198,12 @@ GetLatLong
     Maximize Browser Window
     Click Element    css=#map_canvas > div:nth-child(2) > table > tr > td:nth-child(2) > button
     Sleep    1
-    ${x}    Set Variable    ${1}
+    ${x}    Set Variable    ${0}
     ${args}=    Create Dictionary
     #${list}=    Create List
-    FOR    ${i}    IN RANGE    4
-        ${ret}    Get Element Attribute    css=#gmimap${x} > area    title
+    FOR    ${i}    IN RANGE    6
+        ${ret}=    Get Element Attribute    css=#gmimap${x} > area    title
+        Log To Console    ${ret}
         ${ret}=    Fetch From Left    ${ret}    University
         ${ret}=    Replace String Using Regexp    ${ret}    (^[ ]+|[ ]+$)    \
         #Append To List    ${list}    ${ret}
