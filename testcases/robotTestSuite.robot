@@ -193,6 +193,52 @@ Example3
     #Log To Console    Lists and dicts are often needed with REST APIs:  ${{ {'id': 1, 'name': 'Example3', 'children': [7, 9]} }}
     Log To Console    Let's go crazy: ${{ {str(i): i for i in range($NUMBER)} }}.
 
+GetLatLong
+    Open Browser    C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\geo\\where.html   chrome
+    Maximize Browser Window
+    Click Element    css=#map_canvas > div:nth-child(2) > table > tr > td:nth-child(2) > button
+    Sleep    1
+    ${x}    Set Variable    ${1}
+    ${args}=    Create Dictionary
+    #${list}=    Create List
+    FOR    ${i}    IN RANGE    4
+        ${ret}    Get Element Attribute    css=#gmimap${x} > area    title
+        ${ret}=    Fetch From Left    ${ret}    University
+        ${ret}=    Replace String Using Regexp    ${ret}    (^[ ]+|[ ]+$)    \
+        #Append To List    ${list}    ${ret}
+        Set To Dictionary   ${args}    ${x}    ${ret}
+        ${x}    Evaluate    ${x}+1
+    END
+    Log To Console    ${args}
+    ${items}     Get Dictionary Items   ${args}
+    FOR    ${key}    ${value}    IN    @{items}
+        #Log To Console    ${key}
+        Log To Console    ${value}
+    END
+    #${text}=    Get Element Attribute    css=#gmimap1 > area    title
+    #${text2}=    Get Element Attribute    css=#gmimap2 > area    title
+    #${text3}=    Get Element Attribute    css=#gmimap3 > area    title
+    #${text4}=    Get Element Attribute    css=#gmimap4 > area    title
+    #Set To Dictionary   ${args}    1    ${text}
+    #Set To Dictionary   ${args}    2    ${text2}
+    #Set To Dictionary   ${args}    3    ${text3}
+    #Set To Dictionary   ${args}    4    ${text4}
+    #Log To Console    ${text}
+    #Log To Console    ${text2}
+    #Log To Console    ${text3}
+    #Log To Console    ${text4}
+    #${text}=    Fetch From Left    ${text}    University
+    #${text2}=    Fetch From Left    ${text2}    University
+    #${text3}=    Fetch From Left    ${text3}    University
+    #${text4}=    Fetch From Left    ${text4}    University
+    #${text}=    Replace String Using Regexp    ${text}    (^[ ]+|[ ]+$)    \
+    #${text2}=    Replace String Using Regexp    ${text2}    (^[ ]+|[ ]+$)    \
+    #${text3}=    Replace String Using Regexp    ${text3}    (^[ ]+|[ ]+$)    \
+    #${text4}=    Replace String Using Regexp    ${text4}    (^[ ]+|[ ]+$)    \
+    #Log To Console    ${text}
+    #Log To Console    ${text2}
+    #Log To Console    ${text3}
+    #Log To Console    ${text4}
 
 
 
