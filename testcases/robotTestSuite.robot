@@ -185,6 +185,14 @@ Increment In Every Test Run
     Log To Console    testcomp${counter}  # here you could also do Input Text or whatever
     Increment Counter
 
+Example3
+    ${NUMBER}=    Set Variable    ${100}
+    Log To Console   Today is ${{datetime.date.today()}}.
+    Log To Console    The lucky number is ${{random.randint(0, 100)}}.
+    Log To Console    Number is ${NUMBER} and the next number is ${{$NUMBER + 1}}.
+    #Log To Console    Lists and dicts are often needed with REST APIs:  ${{ {'id': 1, 'name': 'Example3', 'children': [7, 9]} }}
+    Log To Console    Let's go crazy: ${{ {str(i): i for i in range($NUMBER)} }}.
+
 
 
 
