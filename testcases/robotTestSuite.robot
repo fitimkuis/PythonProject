@@ -23,14 +23,46 @@ Library           scripts\\date_time.py
 Library           requests
 Library           JSONLibrary
 Library           ImapLibrary
+#Library           DebugLibrary
+#Library           AppiumLibrary
 
 *** Variables ***
 ${excel_path}     C:\\Users\\fitim\\AppData\\Local\\Programs\\Python\\Python37\\test.xls
 ${update}         ${EMPTY}
+${var}=    Set Variable    3
+
+${QA03UatUrl}  https://uat01.mycompany.com:4567/
+${v1}          QA03
+${v2}          UatUrl
+
+${f-name l-name}    Pat Mat
+${fname}    f-name
+${lname}    l-name
+
+${URL}            https://test.com/
 
 *** Test Cases ***
+Test Inline Expression
+    ${new_URL}=    Set Variable    ${URL.replace('https:', 'http:')}
+    Log To Console    ${new_URL}
+
+Test One
+    Open Browser    http://www.google.com    chrome
+
+Demo
+    Log To Console    ${{datetime.date.today()}}
+    Log To Console    ${{ {'id': 1, 'name': 'Example', 'children': [7, 9]} }}
+    Log To Console    ${{len('${var}') > 3}}
+
+Dynamic Variable
+    Log To Console    ${${v1}${v2}}
+    Log To Console    ${${fname}${lname}}
+
+
 Use LSP service
+    #download_chromedriver
     Open Browser    https://www.google.com  headlesschrome
+    #Debug
     Sleep   1
     Close Browser
 
@@ -194,6 +226,7 @@ Example3
     Log To Console    Let's go crazy: ${{ {str(i): i for i in range($NUMBER)} }}.
 
 GetLatLong
+    Set Log Level	TRACE
     Open Browser    C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\geo\\where.html   chrome
     Maximize Browser Window
     Click Element    css=#map_canvas > div:nth-child(2) > table > tr > td:nth-child(2) > button
@@ -240,6 +273,15 @@ GetLatLong
     #Log To Console    ${text2}
     #Log To Console    ${text3}
     #Log To Console    ${text4}
+
+Test
+    pos and named    pos1    pos2    named=named1
+*** Keywords ***
+pos and named
+    [Arguments]    ${pos}    ${pos2}    ${named}=name
+    Log To Console    ${pos}
+    Log To Console    ${named}
+
 
 
 
