@@ -28,6 +28,7 @@ Library           ImapLibrary
 #Library           AppiumLibrary
 Library           scripts\\whole_suite.py
 Library           clipboard
+Library           scripts\\execute_document.py
 
 *** Variables ***
 ${excel_path}     C:\\Users\\fitim\\AppData\\Local\\Programs\\Python\\Python37\\test.xls
@@ -44,7 +45,17 @@ ${lname}    l-name
 
 ${URL}            https://test.com/
 
+${docsource}=    robotTestSuite.robot
+${dochtmlname}=    DemoTestHtmlDocument.html
+
 *** Test Cases ***
+Run Test Document
+    Log To Console     ${EXECDIR}
+    Log To Console     ${CURDIR}
+    ${doc}=    Create List    ${docsource}    ${dochtmlname}   ${CURDIR}
+    execute_test_doc    ${doc}    ${EXECDIR}\\scripts\\run_test_doc.bat
+    open_doc_in_browser    ${CURDIR}
+
 ClipBorad Copy Paste
     clipboard
 
