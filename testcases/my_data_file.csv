@@ -1,5 +1,5 @@
-${username},${password}
-admin,abc123
-John Doe,ThisIsNotAPassword2
-tester,Qwerty
-John Doe,ThisIsNotAPassword
+${username},${password},${comp}
+admin,abc123,0
+John Doe,ThisIsNotAPassword2,0
+tester,Qwerty,0
+John Doe,ThisIsNotAPassword,1

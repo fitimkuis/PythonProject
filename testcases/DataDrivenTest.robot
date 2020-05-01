@@ -9,16 +9,16 @@ Test Template       Invalid login
 
 *** Variables ***
 
-*** Test Cases ***       username        password
-Login to Application    username    password
+*** Test Cases ***       username        password    comp
+Login to Application    username    password    comp
 
 *** Keywords ***
 Invalid login
-    [Arguments]    ${username}    ${password}
+    [Arguments]    ${username}    ${password}    ${comp}
     Input username    ${username}
     Input pwd    ${password}
     Click login button
-    Run Keyword If    '${username}' == 'John Doe' and '${password}' == 'ThisIsNotAPassword'    Login Successful
+    Run Keyword If    '${comp}' == '1'    Login Successful
     ...    ELSE    Error page should be visible
 
 Input username
