@@ -1,9 +1,10 @@
 *** Settings ***
+
+Suite TearDown    Close All Browsers
+
 Library           webcolors
 Library           scripts\\Colour.py
 #Suite Setup      update-drivers
-Suite TearDown    Close All Browsers
-
 Library           SerialLibrary    #loop://    encoding=ascii
 Library           SSHLibrary
 Library           DateTime
@@ -25,6 +26,8 @@ Library           JSONLibrary
 Library           ImapLibrary
 #Library           DebugLibrary
 #Library           AppiumLibrary
+Library           scripts\\whole_suite.py
+Library           clipboard
 
 *** Variables ***
 ${excel_path}     C:\\Users\\fitim\\AppData\\Local\\Programs\\Python\\Python37\\test.xls
@@ -42,12 +45,22 @@ ${lname}    l-name
 ${URL}            https://test.com/
 
 *** Test Cases ***
+ClipBorad Copy Paste
+    clipboard
+
+Run Suite Multiple Times
+    execute_entire_suite
+
+Run Entire Suite
+    Log To Console    Run Entire Suite
+
 Test Inline Expression
     ${new_URL}=    Set Variable    ${URL.replace('https:', 'http:')}
     Log To Console    ${new_URL}
 
 Test One
     Open Browser    http://www.google.com    chrome
+    Close Browser
 
 Demo
     Log To Console    ${{datetime.date.today()}}
@@ -74,7 +87,6 @@ SimpleFirefoxGoogleTest
     Sleep   4
     Close Browser
 
-[Documentation]
 Get Full Page Screenshot
     Open Browser    https://dzone.com/articles/perform-actions-using-javascript-in-python-seleniu    chrome
     Capture Full Page Screenshot
