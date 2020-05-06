@@ -28,6 +28,6 @@ myxlobject.fetch_data_by_column_by_sheet_name(file_path="C:/Users/fitim/IdeaProj
 print(a)
 
 a = get_all_data_from_excel_to_dic("C:/Users/fitim/IdeaProjects/PythonProject/PythonProject/scripts/test.xls", "sheet1")
-
+print(type(a))
 print(a)
 

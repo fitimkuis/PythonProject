@@ -29,7 +29,7 @@ Library           ImapLibrary
 Library           scripts\\whole_suite.py
 Library           clipboard
 Library           scripts\\execute_document.py
-Library           xl2dict
+Library           scripts\\xls_to_dict.py
 
 *** Variables ***
 ${excel_path}     C:\\Users\\fitim\\AppData\\Local\\Programs\\Python\\Python37\\test.xls
@@ -51,7 +51,20 @@ ${dochtmlname}=    DemoTestHtmlDocument.html
 
 *** Test Cases ***
 ExcelToDictionary
-    
+    ${dict1}=    get_all_data_from_excel_to_dic    C:/Users/fitim/IdeaProjects/PythonProject/PythonProject/scripts/test.xls    sheet1
+    ${len}=    Evaluate    len(${dict1})
+    Log To Console    ${len}
+    Log To Console    ${dict1}
+    #${items}     Get Dictionary Items   ${dict1}[0]
+    #Log To Console    ${items}
+    FOR    ${i}    IN RANGE    ${len}
+        ${items}=     Get Dictionary Items   ${dict1}[${i}]
+        Iterate Excel Rows    ${items}
+    END
+    #FOR    ${val}    IN    @{items}
+    #FOR    ${key}     ${value}    IN ZIP    ${dict1.keys()}    ${dict1.values()}
+    #    Log To Console     ${val}
+    #END
 
 Run Test Document
     Log To Console     ${EXECDIR}
@@ -309,6 +322,12 @@ pos and named
     [Arguments]    ${pos}    ${pos2}    ${named}=name
     Log To Console    ${pos}
     Log To Console    ${named}
+
+Iterate Excel Rows
+    [Arguments]    ${items}
+    FOR    ${val}    IN    @{items}
+        Log To Console     ${val}
+    END
 
 
 
