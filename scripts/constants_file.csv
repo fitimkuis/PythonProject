@@ -1,0 +1,43 @@
+messageType,CLAIM_CREATED
+messageID,CC-01
+messageCreatedTime,2019-05-02 09:12:45.298Z
+claimFromDate,2019-05-02 09:12:45.298Z
+confirmedAddress,True
+contactDetail,email,string
+contactDetail,homeTelephoneNumber,string
+contactDetail,mobileTelephoneNumber,string
+contactDetail,workTelephoneNumber,string
+dobVerification,string
+inviteKey,string
+livedAbroad,True
+livedPeriodsAbroad,country,string
+livedPeriodsAbroad,fromDate,month,string
+livedPeriodsAbroad,fromDate,year,string
+livedPeriodsAbroad,referenceNumber,string
+livedPeriodsAbroad,toDate,month,string
+livedPeriodsAbroad,toDate,year,string
+maritalStatus,string
+overseasAccountDetail,accountCode,string
+overseasAccountDetail,accountHolder,string
+overseasAccountDetail,accountNumber,string
+overseasAccountDetail,result,string
+partnerDetail,allOtherNames,string
+partnerDetail,civilPartnershipDate,2019-05-02 09:12:45.299Z
+partnerDetail,dissolvedDate,2019-05-02 09:12:45.299Z
+partnerDetail,divorcedDate,2019-05-02 09:12:45.299Z
+partnerDetail,dob,2019-05-02 09:12:45.299Z
+partnerDetail,firstName,string
+partnerDetail,marriageDate,2019-05-02 09:12:45.299Z
+partnerDetail,surname,string
+partnerDetail,widowedDate,2019-05-02 09:12:45.299Z
+reCalculatedSpaDate,2019-05-02 09:12:45.299Z
+receivingBenefits,True
+userAssertedDob,2019-05-02 09:12:45.299Z
+welshIndicator,True
+workedAbroad,True
+workedPeriodsAbroad,country,string
+workedPeriodsAbroad,fromDate,month,string
+workedPeriodsAbroad,fromDate,year,string
+workedPeriodsAbroad,referenceNumber,string
+workedPeriodsAbroad,toDate,month,string
+workedPeriodsAbroad,toDate,year,string

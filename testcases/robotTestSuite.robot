@@ -29,6 +29,7 @@ Library           ImapLibrary
 Library           scripts\\whole_suite.py
 Library           clipboard
 Library           scripts\\execute_document.py
+Library           xl2dict
 
 *** Variables ***
 ${excel_path}     C:\\Users\\fitim\\AppData\\Local\\Programs\\Python\\Python37\\test.xls
@@ -49,6 +50,9 @@ ${docsource}=    robotTestSuite.robot
 ${dochtmlname}=    DemoTestHtmlDocument.html
 
 *** Test Cases ***
+ExcelToDictionary
+    
+
 Run Test Document
     Log To Console     ${EXECDIR}
     Log To Console     ${CURDIR}
@@ -60,7 +64,8 @@ ClipBorad Copy Paste
     clipboard
 
 Run Suite Multiple Times
-    execute_entire_suite
+    ${file}=    Create List    ${EXECDIR}\\datadriven\\DataDrivenTest.robot
+    execute_entire_suite    ${EXECDIR}\\scripts\\entire_suite.bat    ${file}
 
 Run Entire Suite
     Log To Console    Run Entire Suite

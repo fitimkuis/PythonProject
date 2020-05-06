@@ -9,7 +9,11 @@ cur.execute('SELECT * FROM Locations')
 fhand = codecs.open('where.js', 'w', "utf-8")
 fhand.write("myData = [\n")
 count = 0
+
+fh = open("where.data")
+
 for row in cur :
+    univercity = str(row[0].decode())
     data = str(row[1].decode())
     try: js = json.loads(str(data))
     except: continue
@@ -22,11 +26,12 @@ for row in cur :
     where = js['results'][0]['formatted_address']
     where = where.replace("'", "")
     try :
-        print(where, lat, lng)
+        print(univercity+" "+where, lat, lng)
 
         count = count + 1
         if count > 1 : fhand.write(",\n")
-        output = "["+str(lat)+","+str(lng)+", '"+where+"']"
+        #output = "["+str(lat)+","+str(lng)+", '"+where+"']"
+        output = "["+str(lat)+","+str(lng)+", '"+univercity+" "+where+"']"
         fhand.write(output)
     except:
         continue

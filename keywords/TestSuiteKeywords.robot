@@ -18,8 +18,8 @@ download-chromedriver
 update-drivers
     download_geckodriver
     download_chromedriver
-    ${update}       autoupdate_chromedriver
-    Log        ${update}
+    #${update}       autoupdate_chromedriver
+    #Log        ${update}
 open-google-firefox
     Open Browser    https://www.google.com      ff
     Sleep   5
@@ -232,6 +232,13 @@ error-handling
 
 Increment Counter
     Create File    ${CURDIR}/variables/counter.py    counter=${counter+1}
+
+clipboard
+    clipboard_get
+    Copy To Clipboard   text from Robot to clipboard
+    ${var}=             Paste From Clipboard
+    Clear Clipboard
+
 
 
 

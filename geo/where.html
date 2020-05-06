@@ -13,14 +13,18 @@
     <script>
 
       function initialize() {
-        alert("To see the title of a marker, hover over the marker but don't click.");
-        var myLatlng = new google.maps.LatLng(60.1726348,24.9510419)
+        //alert("To see the title of a marker, hover over the marker but don't click.");
+        var myLatlng = new google.maps.LatLng(62.931801, 27.671001)
         var mapOptions = {
           zoom: 6,
           center: myLatlng,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+        //var infowindow = new google.maps.InfoWindow({
+        //content: "<span>any html goes here</span>"
+        //});
 
         i = 0;
         var markers = [];
@@ -33,7 +37,7 @@
             var marker = new google.maps.Marker({
                 position: newLatlng,
                 map: map,
-                title: row[2]
+                title: row[0]+" "+row[1]+" "+row[2]
             });
             markers.push(marker);
 <!-- New options for MarkerClusterer function to display markers -->
@@ -47,7 +51,7 @@
     </script>
   </head>
   <body onload="initialize()">
-<div id="map_canvas" style="height: 500px"></div>
+<div id="map_canvas" style="height: 800px"></div>
 <p><b>About this Map</b></p>
 <p>
 This is a cool map from 
