@@ -8,6 +8,7 @@ year_start = date(epoch_year, 1, 1)
 year_end = date(epoch_year, 12, 31)
 print(year_start)
 print(year_end)
+print(year_start.strftime('%m/%d/%Y'))
 
 xmlsource = '''<dns:ManageSPResourceRequest
         xmlns:dns="http://www.adventure-works.com">

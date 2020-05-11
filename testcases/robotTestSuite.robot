@@ -56,8 +56,11 @@ ${aaa}=   {aaa}
 *** Test Cases ***
 Year Start
     ${epoch_year}=    Evaluate    datetime.date.today().year
+    Log To Console    ${epoch_year}
     ${year_start}=    Evaluate    datetime.date(${epoch_year}, 1, 1)
     Log To Console    ${year_start}
+    ${year_first_day}=    Evaluate    datetime.date(${epoch_year}, 1, 1).strftime('%m/%d/%Y')
+    Log To Console    ${year_first_day}
 
 Create Dictonary from Xml
     #${XML_1}    Parse Xml    scripts/demo.xml
