@@ -30,6 +30,8 @@ Library           scripts\\whole_suite.py
 Library           clipboard
 Library           scripts\\execute_document.py
 Library           scripts\\xls_to_dict.py
+Library           xmltodict
+
 
 *** Variables ***
 ${excel_path}     C:\\Users\\fitim\\AppData\\Local\\Programs\\Python\\Python37\\test.xls
@@ -49,8 +51,50 @@ ${URL}            https://test.com/
 ${docsource}=    robotTestSuite.robot
 ${dochtmlname}=    DemoTestHtmlDocument.html
 
+${aaa}=   {aaa}
+
 *** Test Cases ***
+Year Start
+    ${epoch_year}=    Evaluate    datetime.date.today().year
+    ${year_start}=    Evaluate    datetime.date(${epoch_year}, 1, 1)
+    Log To Console    ${year_start}
+
+Create Dictonary from Xml
+    #${XML_1}    Parse Xml    scripts/demo.xml
+    ${XML_1}    Evaluate    json.dumps(xmltodict.parse("C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\scripts\\demo.xml",indent=4))
+    #Log To Console    Parsing   ${XML_submitResourceAction}
+    #@{body}=    Get Elements    ${XML_1}    *.//SPResource
+    #${elemList}=    Get Elements    ${body}    1
+    #@{elemList}=    Convert to List    ${elemList}
+    #&{xmlDict}=    Create Dictionary
+    #FOR    ${item}    IN    @{elemList}
+    #    Set to Dictionary    ${xmlDict}    ${item.tag}=${item.text}
+    #    Log To Console       ${xmlDict}
+    #END
+
+JavaScript
+    Open Browser    http://demoaut.katalon.com/    chrome
+    Wait Until Keyword Succeeds    20    1    Click Element    css=#btn-make-appointment
+    ${matched elements}=    Get Webelements     xpath=//div
+    Log To Console    ${matched elements}
+    FOR  ${element}  IN    @{matched elements}
+       ${text}=    Get Text    ${element}      # will get the text of each matched node
+       Log To Console    ${text}
+    END
+    ${ret}=    Get WebElements    btn-make-appointment
+    Log To Console    ${ret}
+    ${ret}=    Execute Javascript    return document.getElementsByClassName("btn btn-dark btn-lg")
+    Log To Console    ${ret}
+    #Wait Until Keyword Succeeds    20    1    Execute Javascript    document.getElementById("btn-make-appointment.btn btn-dark btn-lg")[0].click()
+    Wait Until Keyword Succeeds    20    1    Execute Javascript    document.getElementById("txt-username").value = 'John Doe'
+    Wait Until Keyword Succeeds    20    1    Execute Javascript    document.getElementById("txt-password").value = 'ThisIsNotAPassword'
+    Wait Until Keyword Succeeds    20    1    Click Element    css=#btn-login
+    Close Browser
+
 ExcelToDictionary
+    Log To Console   ${aaa * 100}
+    Log To Console   ${100 * 'aaa'}
+    Log To Console   ${100 * '${aaa}'}
     ${dict1}=    get_all_data_from_excel_to_dic    C:/Users/fitim/IdeaProjects/PythonProject/PythonProject/scripts/test.xls    sheet1
     ${len}=    Evaluate    len(${dict1})
     Log To Console    ${len}
@@ -59,6 +103,7 @@ ExcelToDictionary
     #Log To Console    ${items}
     FOR    ${i}    IN RANGE    ${len}
         ${items}=     Get Dictionary Items   ${dict1}[${i}]
+        Log To Console    ${items}
         Iterate Excel Rows    ${items}
     END
     #FOR    ${val}    IN    @{items}
