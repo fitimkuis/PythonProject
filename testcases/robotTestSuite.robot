@@ -53,18 +53,37 @@ ${dochtmlname}=    DemoTestHtmlDocument.html
 
 ${aaa}=   {aaa}
 
+${xmlsource}=    C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\scripts\\demo.xml
+
+${variable}=    ${{{'ADMIN': {'name': 'admin', 'pass': '123pass'}, 'USER': {'name': 'bobby', 'pass': 'aowiejf'}}}}
+
 *** Test Cases ***
+Inline Python
+    Log To Console    ${{{x:2**x for x in range(1,6)}}}
+    ${date}=    Get Current Date    result_format=%Y
+    Log To Console    ${{datetime.date(${date}, 1, 1).strftime('%m/%d/%Y')}}
+    Log To Console    ${variable}[ADMIN][name]
+
+
 Year Start
-    ${epoch_year}=    Evaluate    datetime.date.today().year
-    Log To Console    ${epoch_year}
-    ${year_start}=    Evaluate    datetime.date(${epoch_year}, 1, 1)
+    Log To Console    ${{decimal.Decimal('0.11')}}
+    #Log To Console    ${{datatime.date(2020, 4, 27)}}
+    Log To Console    ${{datetime.date.today()}}
+    ${date}=    Get Current Date    result_format=%Y
+    ${date}=    Evaluate    datetime.date(${date}, 1, 1).strftime('%m/%d/%Y')
+    Log To Console    ${date}
+
+    ${year}=    Evaluate    datetime.date.today().year
+    Log To Console    ${year}
+    ${year_start}=    Evaluate    datetime.date(${year}, 1, 1)
     Log To Console    ${year_start}
-    ${year_first_day}=    Evaluate    datetime.date(${epoch_year}, 1, 1).strftime('%m/%d/%Y')
-    Log To Console    ${year_first_day}
+    ${year_first_day}=    Evaluate    datetime.date(${year}, 1, 1).strftime('%d/%m/%Y')
+    Log To Console    ${year_first_day} format as day month Year
 
 Create Dictonary from Xml
     #${XML_1}    Parse Xml    scripts/demo.xml
-    ${XML_1}    Evaluate    json.dumps(xmltodict.parse("C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\scripts\\demo.xml",indent=4))
+    ${XML_1}    Evaluate    xmltodict.parse(${xmlsource})
+    Log To Consle    ${XML_1}
     #Log To Console    Parsing   ${XML_submitResourceAction}
     #@{body}=    Get Elements    ${XML_1}    *.//SPResource
     #${elemList}=    Get Elements    ${body}    1

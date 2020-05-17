@@ -1,9 +1,10 @@
+import itertools
 import json
 import re
 import requests
 from addict import Dict
 import pprint
-from collections import defaultdict
+from collections import defaultdict, ChainMap
 from pprint import pprint
 
 def get_json_dict():
@@ -90,6 +91,11 @@ for x in r:
         print("John found: "+x[0]+ " "+ x[1])
         break
 
+def merge_two_dicts(x, y):
+    """Given two dicts, merge them into a new dict as a shallow copy."""
+    z = x.copy()
+    z.update(y)
+    return z
 
 '''
 p = item.replace('{',"").replace('}',"").replace('[',"").replace(']',"")
@@ -100,6 +106,61 @@ j = p.split(',')
 t = j[2].split(':')
 print(t[1].replace('"',""))
 '''
+
+#i guess list are json lists
+json1 =  '''[{
+    "count": "string",
+    "fromDate": {
+        "month": "string",
+        "year": "string"
+    },
+    "ref": "string",
+    "toDate": {
+        "month": "string",
+        "year": "string"
+    }} ]
+    '''
+json2 = '''[{"Key": "string"}]'''
+dat = json.loads(json1, object_pairs_hook=custom_hook)
+pprint(dat)
+print(type(dat)) #type is list
+
+dat2 = json.loads(json2, object_pairs_hook=custom_hook)
+pprint(dat2)
+
+#convert lists to dict
+data = dict(ChainMap(*dat))
+print(data)
+data2 = dict(ChainMap(*dat2))
+print(data2)
+
+dict = {**data, **data2} #merge two dict
+
+#dict["Spain"]= 34
+#dict.update(newkey1 ='portal')
+
+#z = merge_two_dicts(data, data2)
+print(dict)
+'''
+
+
+iterator = iter(dat)
+my_dictionary = dict(zip(iterator, iterator))
+print(my_dictionary)
+
+iterator2 = iter(dat2)
+my_dictionary2 = dict(zip(iterator2, iterator2))
+print(my_dictionary2)
+
+z = merge_two_dicts(my_dictionary, my_dictionary2)
+print(z)
+
+joinedlist = dat + dat2
+print(joinedlist)
+'''
+#d = dict(itertools.zip_longest(*[iter(dat)] * 2, fillvalue=""))
+#d2 = dict(itertools.zip_longest(*[iter(dat2)] * 2, fillvalue=""))
+#z = merge_two_dicts(d, d2)
 
 
 

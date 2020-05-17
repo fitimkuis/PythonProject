@@ -188,3 +188,14 @@ responsible_person = "patMat"
 start_time = now()
 print("************************'")
 print(textwrap.fill(msg[:400], 50), issue_str, responsible_person, start_time)
+
+L=[10,20,25,32,42]
+b=bytearray(L)
+print(b[0])
+print(b[-1])
+
+from random import *
+otp=''
+for i in range(6):
+    otp=otp+str(randint(0,9))
+print(otp)
