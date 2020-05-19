@@ -59,6 +59,12 @@ ${variable}=    ${{{'ADMIN': {'name': 'admin', 'pass': '123pass'}, 'USER': {'nam
 
 *** Test Cases ***
 Inline Python
+    ${dd}=    Get Current Date    result_format=epoch
+    Log To Console    ${dd}
+    #${d1}=    Get Current Date    result_format=epoch
+    Log To Console    ${{str(${dd})[:14].replace('.','')}}
+    ${d}=    Get Current Date    result_format=epoch    exclude_millis=yes
+    Log To Console    ${{int(${d})}}
     Log To Console    ${{{x:2**x for x in range(1,6)}}}
     ${date}=    Get Current Date    result_format=%Y
     Log To Console    ${{datetime.date(${date}, 1, 1).strftime('%m/%d/%Y')}}
