@@ -59,13 +59,38 @@ ${variable}=    ${{{'ADMIN': {'name': 'admin', 'pass': '123pass'}, 'USER': {'nam
 
 *** Test Cases ***
 Inline Python
+    #1589954561.522866
+    #with exclude millis it would be:
+    #1589954561.0
+    #but I need them, and without that float point:
+    #1589954561522
+    ${epoch}=    Get Current Date    result_format=epoch
+    ${epoch}=    Convert To String    ${epoch}
+    Log To Console    ${epoch}
+    ${splitted}=   Split String    ${epoch}    .
+    #Log To Console    ${splitted}[0]
+    #Log To Console    ${splitted}[1]
+    ${splitted2}=     Evaluate    ${splitted}[1][:3]
+    ${final}=    Catenate    SEPARATOR=    ${splitted}[0]    ${splitted2}
+    Log To Console    ${final}
+    #@{matches} =    Get Regexp Matches    1589954561.522866    (${splitted}[0]).(${splitted}[1])    1    2
+    #Log To Console    @{matches}
+    #FOR    ${match}    IN    @{matches}
+    #    ${first}    ${second}=    Set Variable    ${match}
+    #    Log To Console    ${first}    ${second}
+    #END
+    #Log To Console    @{matches}
+
+    Log To Console    ${{{x:2**x for x in range(1,6)}}}
+
+    ${BuildSqlQuery}=    Set Variable    ["use db1;delete from t1;","use db2;delete from t2;","use db3;delete from t3;"]
+    Log To Console    ${{" ".join(${BuildSqlQuery})}}
     ${dd}=    Get Current Date    result_format=epoch
     Log To Console    ${dd}
     #${d1}=    Get Current Date    result_format=epoch
     Log To Console    ${{str(${dd})[:14].replace('.','')}}
     ${d}=    Get Current Date    result_format=epoch    exclude_millis=yes
     Log To Console    ${{int(${d})}}
-    Log To Console    ${{{x:2**x for x in range(1,6)}}}
     ${date}=    Get Current Date    result_format=%Y
     Log To Console    ${{datetime.date(${date}, 1, 1).strftime('%m/%d/%Y')}}
     Log To Console    ${variable}[ADMIN][name]
