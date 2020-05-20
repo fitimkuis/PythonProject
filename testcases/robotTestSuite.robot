@@ -59,13 +59,15 @@ ${variable}=    ${{{'ADMIN': {'name': 'admin', 'pass': '123pass'}, 'USER': {'nam
 
 *** Test Cases ***
 Inline Python
+    ${what}=    Set Variable   ['hello;', 'world;']
+    Log To Console    ${{" ".join(${what})}}
     ${epoc}=    Get Current Date    result_format=epoch
     ${epoc}=    Convert To String    ${epoc}
     #@{matches}=    Get Regexp Matches    hello world    (hello) (world)    1    2
     #@{matches}=    Get Regexp Matches    hello world    h(....) w(....)    1    2
     @{matches}=    Get Regexp Matches    ${epoc}    (..........).(...)    1    2
-    ${first}=    Set Variable    ${EMPTY}
-    ${second}=    Set Variable    ${EMPTY}
+    #${first}=    Set Variable    ${EMPTY}
+    #${second}=    Set Variable    ${EMPTY}
     ${line}=    Set Variable    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     Log To Console    @{matches}
      FOR    ${match}    IN    @{matches}
@@ -82,15 +84,15 @@ Inline Python
     #1589954561.0
     #but I need them, and without that float point:
     #1589954561522
-    ${epoch}=    Get Current Date    result_format=epoch
-    ${epoch}=    Convert To String    ${epoch}
-    Log To Console    ${epoch}
-    ${splitted}=   Split String    ${epoch}    .
+    ##${epoch}=    Get Current Date    result_format=epoch
+    ##${epoch}=    Convert To String    ${epoch}
+    ##Log To Console    ${epoch}
+    ##${splitted}=   Split String    ${epoch}    .
     #Log To Console    ${splitted}[0]
     #Log To Console    ${splitted}[1]
-    ${splitted2}=     Evaluate    ${splitted}[1][:3]
-    ${final}=    Catenate    SEPARATOR=    ${splitted}[0]    ${splitted2}
-    Log To Console    ${final}
+    ##${splitted2}=     Evaluate    ${splitted}[1][:3]
+    ##${final}=    Catenate    SEPARATOR=    ${splitted}[0]    ${splitted2}
+    ##Log To Console    ${final}
     #@{matches} =    Get Regexp Matches    1589954561.522866    (${splitted}[0]).(${splitted}[1])    1    2
     #Log To Console    @{matches}
     #FOR    ${match}    IN    @{matches}
