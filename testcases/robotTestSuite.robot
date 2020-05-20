@@ -59,6 +59,24 @@ ${variable}=    ${{{'ADMIN': {'name': 'admin', 'pass': '123pass'}, 'USER': {'nam
 
 *** Test Cases ***
 Inline Python
+    ${epoc}=    Get Current Date    result_format=epoch
+    ${epoc}=    Convert To String    ${epoc}
+    #@{matches}=    Get Regexp Matches    hello world    (hello) (world)    1    2
+    #@{matches}=    Get Regexp Matches    hello world    h(....) w(....)    1    2
+    @{matches}=    Get Regexp Matches    ${epoc}    (..........).(...)    1    2
+    ${first}=    Set Variable    ${EMPTY}
+    ${second}=    Set Variable    ${EMPTY}
+    ${line}=    Set Variable    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    Log To Console    @{matches}
+     FOR    ${match}    IN    @{matches}
+         ${first}    ${second}=    Set Variable    ${match}
+         Log To Console    ${first}    ${second}
+     END
+     ${result}=    Catenate    SEPARATOR=    ${first}    ${second}
+     Log To Console    ${result}
+     Log to Console    ${line}
+     Log To Console    ${{datetime.datetime.fromtimestamp(${first}).strftime('%Y-%m-%d %H:%M:%S') }}
+     Log To Console    ${{ time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(${first})) }}
     #1589954561.522866
     #with exclude millis it would be:
     #1589954561.0
