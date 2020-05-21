@@ -4,8 +4,8 @@ Suite TearDown    Close All Browsers
 
 Library           webcolors
 Library           scripts\\Colour.py
-#Suite Setup      update-drivers
-Library           SerialLibrary    #loop://    encoding=ascii
+#Suite Setup       update-drivers
+Library           SerialLibrary    loop://    encoding=ascii
 Library           SSHLibrary
 Library           DateTime
 Library           String
@@ -31,6 +31,7 @@ Library           clipboard
 Library           scripts\\execute_document.py
 Library           scripts\\xls_to_dict.py
 Library           xmltodict
+Library           pabotRunnerTest\\pabotRunner.py
 
 
 *** Variables ***
@@ -57,7 +58,18 @@ ${xmlsource}=    C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\s
 
 ${variable}=    ${{{'ADMIN': {'name': 'admin', 'pass': '123pass'}, 'USER': {'name': 'bobby', 'pass': 'aowiejf'}}}}
 
+${pabot_path}=   C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\testcases\\robotTestSuite.robot
+${bat_path}=     C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\pabotRunnerTest\\pabotRunner.bat
+${pabot_reports_file}=     C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\pabotRunnerTest\\reports
+${run_path}=     C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\pabotRunnerTest
+
 *** Test Cases ***
+Execute PabotRunner
+    #download_geckodriver
+    #download_chromedriver
+    ${filelist}=    Create List    ${pabot_path}    ${pabot_reports_file}    .robot
+    execute_pabot_runner    ${bat_path}    ${filelist}
+
 Inline Python
     ${what}=    Set Variable   ['hello;', 'world;']
     Log To Console    ${{" ".join(${what})}}
@@ -329,7 +341,7 @@ Hello serial test
      Read Data Should Be    Hello World
 
 Read Until should read until terminator or size
-    [Setup]    Add Port    loop://    timeout=0.1
+    #[Setup]    Add Port    loop://    timeout=0.1
     ${bytes} =    Set Variable
     Write Data    01 23 45 0A 67 89 AB CD EF
     ${read} =    SerialLibrary.Read Until
