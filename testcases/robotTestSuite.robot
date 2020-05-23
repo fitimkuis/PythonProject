@@ -14,7 +14,7 @@ Library           scripts\\excelUtil.py
 Library           Collections
 Library           OperatingSystem
 Library           excelUtil
-Library           SeleniumLibrary    plugins=SeleniumTestability;True;30 Seconds;True
+Library           SeleniumLibrary    plugins=SeleniumTestability;True;30 Seconds;True    screenshot_root_directory=C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\TestSuitesSceenshots
 Library           scripts\\ChromeDriverAutomation.py
 Library           scripts\\run_pabot.py
 Library           scripts\\screenshot.py
@@ -32,7 +32,7 @@ Library           scripts\\execute_document.py
 Library           scripts\\xls_to_dict.py
 Library           xmltodict
 Library           pabotRunnerTest\\pabotRunner.py
-
+Library           scripts\\ResultModifier.py
 
 *** Variables ***
 ${excel_path}     C:\\Users\\fitim\\AppData\\Local\\Programs\\Python\\Python37\\test.xls
@@ -71,6 +71,7 @@ Execute PabotRunner
     execute_pabot_runner    ${bat_path}    ${filelist}
 
 Inline Python
+    [Tags]    smoke
     ${what}=    Set Variable   ['hello;', 'world;']
     Log To Console    ${{" ".join(${what})}}
     ${epoc}=    Get Current Date    result_format=epoch
@@ -126,6 +127,7 @@ Inline Python
     ${date}=    Get Current Date    result_format=%Y
     Log To Console    ${{datetime.date(${date}, 1, 1).strftime('%m/%d/%Y')}}
     Log To Console    ${variable}[ADMIN][name]
+
 
 
 Year Start
