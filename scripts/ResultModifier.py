@@ -1,11 +1,13 @@
-
+from robot.libraries.BuiltIn import BuiltIn
 class ResultModifier(object):
     ROBOT_LISTENER_API_VERSION = 3
 
     def __init__(self, max_seconds=10):
         self.max_milliseconds = float(max_seconds) * 1000
-        self.arg = "Keyword added by listener!"
-        self.counter = 0
+        #self.arg = "Keyword added by listener!"
+        #self.counter = 0
+        with open("counter.txt", 'w') as fw:
+            fw.write('0')
 
     def start_suite(self, data, suite):
         suite.doc = 'Documentation set by listener.'
@@ -28,6 +30,7 @@ class ResultModifier(object):
         test.keywords.create(name='Log To Console', args=[self.increment_counter()])
 
     def increment_counter(self):
+        testname = BuiltIn().get_variable_value("${TEST NAME}")
         with open("counter.txt", 'r') as f:
             for line in f:
                 line = line.rstrip()
@@ -35,10 +38,10 @@ class ResultModifier(object):
                     break
                 else:
                     line = int(line) + 1
-                    ret = self.call_counter(line)
-                    return ret
+                    ret = self.write_counter(line)
+                    return str(ret)+". "+testname
 
-    def call_counter(self, cont):
+    def write_counter(self, cont):
         with open("counter.txt", 'w') as fw:
             print(cont)
             fw.write(str(cont))
