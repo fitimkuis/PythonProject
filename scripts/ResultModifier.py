@@ -5,7 +5,7 @@ class ResultModifier(object):
     def __init__(self, max_seconds=10):
         self.max_milliseconds = float(max_seconds) * 1000
         #self.arg = "Keyword added by listener!"
-        #self.counter = 0
+        self.counter = 0
         with open("counter.txt", 'w') as fw:
             fw.write('0')
 
@@ -27,9 +27,13 @@ class ResultModifier(object):
             msg.html = True
 
     def start_test(self,test, result):
-        test.keywords.create(name='Log To Console', args=[self.increment_counter()])
+        test.keywords.create(name='Log To Console', args=[self.add_counter(test)])
 
-    def increment_counter(self):
+    def add_counter(self, test):
+        self.counter = self.counter + 1
+        return str(self.counter)+". "+test.name
+
+    def increment_counter(self, test):
         testname = BuiltIn().get_variable_value("${TEST NAME}")
         with open("counter.txt", 'r') as f:
             for line in f:
@@ -39,12 +43,10 @@ class ResultModifier(object):
                 else:
                     line = int(line) + 1
                     ret = self.write_counter(line)
-                    return str(ret)+". "+testname
+                    return str(ret)+". "+test.name
 
     def write_counter(self, cont):
         with open("counter.txt", 'w') as fw:
             print(cont)
             fw.write(str(cont))
             return cont
-
-
