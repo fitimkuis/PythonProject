@@ -1,0 +1,5 @@
+{"level":30,"time":"2021-03-31T11:16:08.661Z","pid":1104,"hostname":"LAPTOP-D82CPDK4","msg":"Listening on 52578"}
+{"level":30,"time":"2021-03-31T11:16:09.749Z","pid":1104,"hostname":"LAPTOP-D82CPDK4","msg":"Changed active context"}
+{"level":30,"time":"2021-03-31T11:16:10.258Z","pid":1104,"hostname":"LAPTOP-D82CPDK4","msg":"Video path: undefined"}
+{"level":30,"time":"2021-03-31T11:16:10.258Z","pid":1104,"hostname":"LAPTOP-D82CPDK4","msg":"Changed active page"}
+{"level":30,"time":"2021-03-31T11:18:01.056Z","pid":1104,"hostname":"LAPTOP-D82CPDK4","msg":"Retrieved text for element h1 containing Playwright enables reliable end-to-end testing for modern web apps."}

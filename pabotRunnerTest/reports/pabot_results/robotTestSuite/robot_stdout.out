@@ -1,0 +1,172 @@
+==============================================================================
+robotTestSuite                                                                
+==============================================================================
+First Test cases                                                      | FAIL |
+MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=4723): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000264E3BAD148>: Failed to establish a new connection: [WinError 10061] Yhteyttä ei voi muodostaa, koska kohdekone ei salli sitä'))
+------------------------------------------------------------------------------
+Execute PabotRunner                                                   | FAIL |
+No keyword with name 'execute_pabot_runner' found.
+------------------------------------------------------------------------------
+Inline Python                                                         hello; world;
+('1617219389', '113')
+1617219389
+1617219389113
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+2021-03-31 22:36:29
+2021-03-31 19:36:29
+{1: 2, 2: 4, 3: 8, 4: 16, 5: 32}
+use db1;delete from t1; use db2;delete from t2; use db3;delete from t3;
+1617219389.144065
+1617219389144
+1617219389
+01/01/2021
+admin
+| PASS |
+------------------------------------------------------------------------------
+Year Start                                                            0.11
+2021-03-31
+01/01/2021
+2021
+2021-01-01
+01/01/2021 format as day month Year
+| PASS |
+------------------------------------------------------------------------------
+Create Dictonary from Xml                                             | FAIL |
+Evaluating expression 'xmltodict.parse(C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\scripts\demo.xml)' failed: SyntaxError: invalid syntax (<string>, line 1)
+------------------------------------------------------------------------------
+JavaScript                                                            | FAIL |
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 83
+------------------------------------------------------------------------------
+ExcelToDictionary                                                     {aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}{aaa}
+| FAIL |
+No keyword with name 'get_all_data_from_excel_to_dic' found.
+------------------------------------------------------------------------------
+Run Test Document                                                     C:\Users\fitim\IdeaProjects\PythonProject\PythonProject
+C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases
+| FAIL |
+No keyword with name 'execute_test_doc' found.
+------------------------------------------------------------------------------
+ClipBorad Copy Paste                                                  | FAIL |
+No keyword with name 'clipboard' found.
+------------------------------------------------------------------------------
+Run Suite Multiple Times                                              | FAIL |
+No keyword with name 'execute_entire_suite' found.
+------------------------------------------------------------------------------
+Run Entire Suite                                                      Run Entire Suite
+| PASS |
+------------------------------------------------------------------------------
+Test Inline Expression                                                http://test.com/
+| PASS |
+------------------------------------------------------------------------------
+Test One                                                              | FAIL |
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 83
+------------------------------------------------------------------------------
+Demo                                                                  2021-03-31
+{'id': 1, 'name': 'Example', 'children': [7, 9]}
+True
+| PASS |
+------------------------------------------------------------------------------
+Dynamic Variable                                                      https://uat01.mycompany.com:4567/
+Pat Mat
+| PASS |
+------------------------------------------------------------------------------
+Use LSP service                                                       | FAIL |
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 83
+------------------------------------------------------------------------------
+Iterate Dictionary                                                    | FAIL |
+No keyword with name 'loop' found.
+------------------------------------------------------------------------------
+SimpleFirefoxGoogleTest                                               | PASS |
+------------------------------------------------------------------------------
+Get Full Page Screenshot                                              | FAIL |
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 83
+------------------------------------------------------------------------------
+Get Full Page                                                         | FAIL |
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 83
+------------------------------------------------------------------------------
+Get Full Page2                                                        | FAIL |
+No keyword with name 'take_fullpage_sceenshot' found.
+------------------------------------------------------------------------------
+run-pabot-test-suites                                                 | FAIL |
+No keyword with name 'pabot' found. Did you mean:
+    requests.Post
+------------------------------------------------------------------------------
+combine test results                                                  | FAIL |
+No keyword with name 'rebot' found.
+------------------------------------------------------------------------------
+date-time                                                             | FAIL |
+No keyword with name 'add date to date' found.
+------------------------------------------------------------------------------
+exel-lib                                                              | FAIL |
+No keyword with name 'excel-keyword' found.
+------------------------------------------------------------------------------
+Browser-test                                                          | FAIL |
+No keyword with name 'open-google-firefox' found.
+------------------------------------------------------------------------------
+ElementBackColour                                                     | FAIL |
+No keyword with name 'getElementColour' found.
+------------------------------------------------------------------------------
+getJsonDictionary                                                     | FAIL |
+No keyword with name 'test dictionary' found.
+------------------------------------------------------------------------------
+Example                                                               HERE ISS JOHNNY!
+| PASS |
+------------------------------------------------------------------------------
+Example2                                                              john
+| PASS |
+------------------------------------------------------------------------------
+imapGmail                                                             | FAIL |
+No keyword with name 'imap' found.
+------------------------------------------------------------------------------
+Hello serial test                                                     | PASS |
+------------------------------------------------------------------------------
+Read Until should read until terminator or size                       | FAIL |
+01 23 45 0A 67 89 AB CD EF != 01 23 45 0A
+------------------------------------------------------------------------------
+Increment                                                             test100
+test101
+test102
+test103
+test104
+test105
+test106
+test107
+test108
+test109
+['test100', 'test101', 'test102', 'test103', 'test104', 'test105', 'test106', 'test107', 'test108', 'test109']
+test100
+test101
+test102
+test103
+test104
+test105
+test106
+test107
+test108
+test109
+
+test109
+| PASS |
+------------------------------------------------------------------------------
+Increment In Every Test Run                                           | FAIL |
+Variable '${counter}' not found.
+------------------------------------------------------------------------------
+Example3                                                              Today is 2021-03-31.
+The lucky number is 31.
+Number is 100 and the next number is 101.
+Let's go crazy: {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '11': 11, '12': 12, '13': 13, '14': 14, '15': 15, '16': 16, '17': 17, '18': 18, '19': 19, '20': 20, '21': 21, '22': 22, '23': 23, '24': 24, '25': 25, '26': 26, '27': 27, '28': 28, '29': 29, '30': 30, '31': 31, '32': 32, '33': 33, '34': 34, '35': 35, '36': 36, '37': 37, '38': 38, '39': 39, '40': 40, '41': 41, '42': 42, '43': 43, '44': 44, '45': 45, '46': 46, '47': 47, '48': 48, '49': 49, '50': 50, '51': 51, '52': 52, '53': 53, '54': 54, '55': 55, '56': 56, '57': 57, '58': 58, '59': 59, '60': 60, '61': 61, '62': 62, '63': 63, '64': 64, '65': 65, '66': 66, '67': 67, '68': 68, '69': 69, '70': 70, '71': 71, '72': 72, '73': 73, '74': 74, '75': 75, '76': 76, '77': 77, '78': 78, '79': 79, '80': 80, '81': 81, '82': 82, '83': 83, '84': 84, '85': 85, '86': 86, '87': 87, '88': 88, '89': 89, '90': 90, '91': 91, '92': 92, '93': 93, '94': 94, '95': 95, '96': 96, '97': 97, '98': 98, '99': 99}.
+| PASS |
+------------------------------------------------------------------------------
+GetLatLong                                                            | FAIL |
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 83
+------------------------------------------------------------------------------
+Test                                                                  pos1
+named1
+| PASS |
+------------------------------------------------------------------------------
+robotTestSuite                                                        | FAIL |
+38 tests, 13 passed, 25 failed
+==============================================================================
+Output:  C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\pabotRunnerTest\reports\pabot_results\robotTestSuite\output.xml

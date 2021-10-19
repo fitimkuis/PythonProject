@@ -1,5 +1,5 @@
-<dns:ManageSPResourceRequest
-        xmlns:dns="http://www.adventure-works.com">
+<dns:ManageSPResourceRequest>
+        <xmlns:dns="http://www.adventure-works.com">
     <SPResource>
         <ID>ORD690432</ID>
         <orderDate>2020-04-17T13:30:00Z</orderDate>

@@ -1,0 +1,8 @@
+datasources:a186d9f733ffa8a82e694c37b9b5049db8ffcb61
+commandlineoptions:9f8598a690c7367accf83ead504756ddd374acc9
+suitesfrom:no-suites-from-option
+file:3b2ea90c4ab2f1a992b3fadeaeec3e7a98302faf
+--suite Suites.Suite1
+--suite Suites.Suite2
+--suite Suites.Suite3
+--suite Suites.Parse-Logs

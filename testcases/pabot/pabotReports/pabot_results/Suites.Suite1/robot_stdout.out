@@ -3,14 +3,15 @@ Suites
 ==============================================================================
 Suites.Suite1                                                                 
 ==============================================================================
-suite1_open_web_page_successfully                                     | PASS |
+suite1_open_web_page_successfully                                     | FAIL |
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 81
 ------------------------------------------------------------------------------
-Suites.Suite1                                                         | PASS |
-1 critical test, 1 passed, 0 failed
-1 test total, 1 passed, 0 failed
+Suites.Suite1                                                         | FAIL |
+1 critical test, 0 passed, 1 failed
+1 test total, 0 passed, 1 failed
 ==============================================================================
-Suites                                                                | PASS |
-1 critical test, 1 passed, 0 failed
-1 test total, 1 passed, 0 failed
+Suites                                                                | FAIL |
+1 critical test, 0 passed, 1 failed
+1 test total, 0 passed, 1 failed
 ==============================================================================
-Output:  C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\.idea\com\python\pabot\pabotReports\pabot_results\Suites.Suite1\output.xml
+Output:  C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\pabot\pabotReports\pabot_results\Suites.Suite1\output.xml

@@ -33,7 +33,6 @@ Click login button
     Click Element    css=#btn-login
 
 Open my Browser
-
     Open Browser    http://demoaut.katalon.com/    headlesschrome
 
 Close Browsers

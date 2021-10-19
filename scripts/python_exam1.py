@@ -2,6 +2,11 @@ import textwrap
 
 from win32timezone import now
 
+real = 0.0129999999999
+actual = 0.01299
+str(actual) == str(real)[:len(str(actual))]
+print(actual)
+
 s='Python is easy'
 s1=s[6:-4]
 print(s1)

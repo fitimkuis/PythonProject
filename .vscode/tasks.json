@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run robo tests",
+            "command": "robot",
+            "options": {
+                "cwd": "${workspaceFolder}/C:/Users/fitim/IdeaProjects/PythonProject/PythonProject/testcases"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}

@@ -5,7 +5,7 @@ Suite TearDown    Close All Browsers
 Library           webcolors
 Library           scripts\\Colour.py
 #Suite Setup       update-drivers
-Library           SerialLibrary    loop://    encoding=ascii
+#Library           SerialLibrary    loop://    encoding=ascii
 Library           SSHLibrary
 Library           DateTime
 Library           String
@@ -25,7 +25,6 @@ Library           requests
 Library           JSONLibrary
 Library           ImapLibrary
 #Library           DebugLibrary
-#Library           AppiumLibrary
 Library           scripts\\whole_suite.py
 Library           clipboard
 Library           scripts\\execute_document.py
@@ -33,6 +32,10 @@ Library           scripts\\xls_to_dict.py
 Library           xmltodict
 Library           pabotRunnerTest\\pabotRunner.py
 Library           scripts\\ResultModifier.py
+Library           scripts\\TestEnumerator.py
+Library           SeleniumLibrary
+Library           Screenshot
+
 
 *** Variables ***
 ${excel_path}     C:\\Users\\fitim\\AppData\\Local\\Programs\\Python\\Python37\\test.xls
@@ -63,7 +66,39 @@ ${bat_path}=     C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\p
 ${pabot_reports_file}=     C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\pabotRunnerTest\\reports
 ${run_path}=     C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\pabotRunnerTest
 
+${REMOTE_URL}     http://127.0.0.1:4723/wd/hub
+${PLATFORM_NAME}    Android
+${PLATFORM_VERSION}    7.0
+${DEVICE_NAME}    emulator-5554
+${Activity_NAME}        com.android.calculator2.Calculator
+${PACKAGE_NAME}     com.android.calculator2
+
 *** Test Cases ***
+ChromeDriverIgnore
+    #download_chromedriver
+    Open Browser    http://demoaut.katalon.com/    chrome    options=add_argument("--disable-popup-blocking"); add_argument("--ignore-certificate-errors")
+    Take Screenshot Without Embedding    shotti
+
+Example Test
+    Library           Browser
+    New Page    https://playwright.dev
+    Browser.Get Text    h1    contains    Playwright
+
+Starting a browser with a page
+    Library           Browser
+    New Browser    chromium    headless=false
+    New Context    viewport={'width': 1920, 'height': 1080}
+    New Page       https://marketsquare.github.io/robotframework-browser/Browser.html
+    Browser.Get Title      ==    Browser
+
+First Test cases
+    Library           AppiumLibrary
+    Open calculator
+    AppiumLibrary.Click Element    xpath=//android.widget.Button[contains(@text,'6')]
+    AppiumLibrary.Click Element    xpath=//android.widget.Button[contains(@text,'+')]
+    AppiumLibrary.Click Element    xpath=//android.widget.Button[contains(@text,'4')]
+    AppiumLibrary.Click Element    xpath=//android.widget.Button[contains(@text,'=')]
+
 Execute PabotRunner
     #download_geckodriver
     #download_chromedriver
@@ -72,6 +107,7 @@ Execute PabotRunner
 
 Inline Python
     [Tags]    smoke
+    #my_keyword    ${EMPTY}
     ${what}=    Set Variable   ['hello;', 'world;']
     Log To Console    ${{" ".join(${what})}}
     ${epoc}=    Get Current Date    result_format=epoch
@@ -127,8 +163,6 @@ Inline Python
     ${date}=    Get Current Date    result_format=%Y
     Log To Console    ${{datetime.date(${date}, 1, 1).strftime('%m/%d/%Y')}}
     Log To Console    ${variable}[ADMIN][name]
-
-
 
 Year Start
     Log To Console    ${{decimal.Decimal('0.11')}}
@@ -460,6 +494,16 @@ Iterate Excel Rows
     FOR    ${val}    IN    @{items}
         Log To Console     ${val}
     END
+
+Open calculator
+  Open Application   ${REMOTE_URL}
+  ...        platformName=${PLATFORM_NAME}
+  ...    platformVersion=${PLATFORM_VERSION}
+  ...   deviceName=${DEVICE_NAME}
+  ...   automationName=UiAutomator2
+  ...    newCommandTimeout=2500
+  ...    appActivity=${Activity_NAME}
+  ...    appPackage=${PACKAGE_NAME}
 
 
 

@@ -1,0 +1,20 @@
+==============================================================================
+Suites                                                                        
+==============================================================================
+Suites.Parse-Logs                                                             
+==============================================================================
+Parse-TCS-BANK-Log                                                    | FAIL |
+No keyword with name 'get_log_values' found. Did you mean:
+    parser_log.Get Values
+------------------------------------------------------------------------------
+LogParser                                                             | PASS |
+------------------------------------------------------------------------------
+Suites.Parse-Logs                                                     | FAIL |
+2 critical tests, 1 passed, 1 failed
+2 tests total, 1 passed, 1 failed
+==============================================================================
+Suites                                                                | FAIL |
+2 critical tests, 1 passed, 1 failed
+2 tests total, 1 passed, 1 failed
+==============================================================================
+Output:  C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\pabot\pabotReports\pabot_results\Suites.Parse-Logs\output.xml

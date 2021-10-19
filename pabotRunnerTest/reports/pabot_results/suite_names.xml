@@ -1,0 +1,1424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.7.6 on win32)" generated="20210331 22:36:09.764" rpa="false" schemaversion="2">
+<suite id="s1" name="robotTestSuite" source="C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot">
+<test id="s1-t1" name="First Test cases">
+<kw name="Open calculator">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>newCommandTimeout=2500</arg>
+<arg>appActivity=${Activity_NAME}</arg>
+<arg>appPackage=${PACKAGE_NAME}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.144" endtime="20210331 22:36:12.144"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.142" endtime="20210331 22:36:12.144"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[contains(@text,'6')]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.144" endtime="20210331 22:36:12.144"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[contains(@text,'+')]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.144" endtime="20210331 22:36:12.144"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[contains(@text,'4')]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.144" endtime="20210331 22:36:12.144"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[contains(@text,'=')]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.144" endtime="20210331 22:36:12.144"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.134" endtime="20210331 22:36:12.144"/>
+</test>
+<test id="s1-t2" name="Execute PabotRunner">
+<kw name="Create List" library="BuiltIn">
+<var>${filelist}</var>
+<arg>${pabot_path}</arg>
+<arg>${pabot_reports_file}</arg>
+<arg>.robot</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.154" endtime="20210331 22:36:12.154"/>
+</kw>
+<kw name="execute_pabot_runner">
+<arg>${bat_path}</arg>
+<arg>${filelist}</arg>
+<msg timestamp="20210331 22:36:12.184" level="FAIL">No keyword with name 'execute_pabot_runner' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.182" endtime="20210331 22:36:12.184"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.152" endtime="20210331 22:36:12.184">No keyword with name 'execute_pabot_runner' found.</status>
+</test>
+<test id="s1-t3" name="Inline Python">
+<kw name="Set Variable" library="BuiltIn">
+<var>${what}</var>
+<arg>['hello;', 'world;']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.184" endtime="20210331 22:36:12.184"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${{" ".join(${what})}}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.184" endtime="20210331 22:36:12.184"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${epoc}</var>
+<arg>result_format=epoch</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.184" endtime="20210331 22:36:12.184"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${epoc}</var>
+<arg>${epoc}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.184" endtime="20210331 22:36:12.184"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>@{matches}</var>
+<arg>${epoc}</arg>
+<arg>(..........).(...)</arg>
+<arg>1</arg>
+<arg>2</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.192" endtime="20210331 22:36:12.192"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${line}</var>
+<arg>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.192" endtime="20210331 22:36:12.192"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>@{matches}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.192" endtime="20210331 22:36:12.194"/>
+</kw>
+<for flavor="IN">
+<var>${match}</var>
+<value>@{matches}</value>
+<iter>
+<var name="${match}">${match}</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${first}</var>
+<var>${second}</var>
+<arg>${match}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.194" endtime="20210331 22:36:12.194"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${first}</arg>
+<arg>${second}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.194" endtime="20210331 22:36:12.194"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.194" endtime="20210331 22:36:12.194"/>
+</iter>
+<status status="PASS" starttime="20210331 22:36:12.194" endtime="20210331 22:36:12.194"/>
+</for>
+<kw name="Catenate" library="BuiltIn">
+<var>${result}</var>
+<arg>SEPARATOR=</arg>
+<arg>${first}</arg>
+<arg>${second}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.194" endtime="20210331 22:36:12.194"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.194" endtime="20210331 22:36:12.194"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${line}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.194" endtime="20210331 22:36:12.194"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${{datetime.datetime.fromtimestamp(${first}).strftime('%Y-%m-%d %H:%M:%S') }}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.194" endtime="20210331 22:36:12.194"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${{ time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(${first})) }}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.194" endtime="20210331 22:36:12.194"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${{{x:2**x for x in range(1,6)}}}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.194" endtime="20210331 22:36:12.194"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${BuildSqlQuery}</var>
+<arg>["use db1;delete from t1;","use db2;delete from t2;","use db3;delete from t3;"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.194" endtime="20210331 22:36:12.194"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${{" ".join(${BuildSqlQuery})}}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.194" endtime="20210331 22:36:12.194"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${dd}</var>
+<arg>result_format=epoch</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.202" endtime="20210331 22:36:12.202"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${dd}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.202" endtime="20210331 22:36:12.204"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${{str(${dd})[:14].replace('.','')}}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.204" endtime="20210331 22:36:12.204"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${d}</var>
+<arg>result_format=epoch</arg>
+<arg>exclude_millis=yes</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.204" endtime="20210331 22:36:12.204"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${{int(${d})}}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.204" endtime="20210331 22:36:12.204"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${date}</var>
+<arg>result_format=%Y</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.204" endtime="20210331 22:36:12.204"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${{datetime.date(${date}, 1, 1).strftime('%m/%d/%Y')}}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.204" endtime="20210331 22:36:12.204"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${variable}[ADMIN][name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.204" endtime="20210331 22:36:12.204"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" starttime="20210331 22:36:12.184" endtime="20210331 22:36:12.204"/>
+</test>
+<test id="s1-t4" name="Year Start">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${{decimal.Decimal('0.11')}}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.214" endtime="20210331 22:36:12.214"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${{datetime.date.today()}}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.214" endtime="20210331 22:36:12.214"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${date}</var>
+<arg>result_format=%Y</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.214" endtime="20210331 22:36:12.214"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${date}</var>
+<arg>datetime.date(${date}, 1, 1).strftime('%m/%d/%Y')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.214" endtime="20210331 22:36:12.214"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${date}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.214" endtime="20210331 22:36:12.214"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${year}</var>
+<arg>datetime.date.today().year</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.214" endtime="20210331 22:36:12.214"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${year}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.214" endtime="20210331 22:36:12.214"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${year_start}</var>
+<arg>datetime.date(${year}, 1, 1)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.222" endtime="20210331 22:36:12.222"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${year_start}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.222" endtime="20210331 22:36:12.222"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${year_first_day}</var>
+<arg>datetime.date(${year}, 1, 1).strftime('%d/%m/%Y')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.224" endtime="20210331 22:36:12.224"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${year_first_day} format as day month Year</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.224" endtime="20210331 22:36:12.224"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.204" endtime="20210331 22:36:12.224"/>
+</test>
+<test id="s1-t5" name="Create Dictonary from Xml">
+<kw name="Evaluate" library="BuiltIn">
+<var>${XML_1}</var>
+<arg>xmltodict.parse(${xmlsource})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.224" endtime="20210331 22:36:12.224"/>
+</kw>
+<kw name="Log To Consle">
+<arg>${XML_1}</arg>
+<msg timestamp="20210331 22:36:12.253" level="FAIL">No keyword with name 'Log To Consle' found. Did you mean:
+    BuiltIn.Log To Console</msg>
+<status status="FAIL" starttime="20210331 22:36:12.253" endtime="20210331 22:36:12.253"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.224" endtime="20210331 22:36:12.255">No keyword with name 'Log To Consle' found. Did you mean:
+    BuiltIn.Log To Console</status>
+</test>
+<test id="s1-t6" name="JavaScript">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://demoaut.katalon.com/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.255" endtime="20210331 22:36:12.255"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20</arg>
+<arg>1</arg>
+<arg>Click Element</arg>
+<arg>css=#btn-make-appointment</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element">
+<arg>css=#btn-make-appointment</arg>
+<msg timestamp="20210331 22:36:12.255" level="FAIL">Multiple keywords with name 'Click Element' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Click Element
+    SeleniumLibrary.Click Element</msg>
+<status status="FAIL" starttime="20210331 22:36:12.255" endtime="20210331 22:36:12.255"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.255" endtime="20210331 22:36:12.255"/>
+</kw>
+<kw name="Get Webelements">
+<var>${matched elements}=</var>
+<arg>xpath=//div</arg>
+<msg timestamp="20210331 22:36:12.255" level="FAIL">Multiple keywords with name 'Get Webelements' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Get Webelements
+    SeleniumLibrary.Get WebElements</msg>
+<status status="FAIL" starttime="20210331 22:36:12.255" endtime="20210331 22:36:12.255"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${matched elements}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.255" endtime="20210331 22:36:12.255"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{matched elements}</value>
+<iter>
+<var name="${element}">${element}</var>
+<kw name="Get Text">
+<var>${text}=</var>
+<arg>${element}</arg>
+<msg timestamp="20210331 22:36:12.263" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Get Text
+    SeleniumLibrary.Get Text</msg>
+<status status="FAIL" starttime="20210331 22:36:12.263" endtime="20210331 22:36:12.263"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.263" endtime="20210331 22:36:12.263"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.255" endtime="20210331 22:36:12.265"/>
+</iter>
+<status status="FAIL" starttime="20210331 22:36:12.255" endtime="20210331 22:36:12.265"/>
+</for>
+<kw name="Get WebElements">
+<var>${ret}=</var>
+<arg>btn-make-appointment</arg>
+<msg timestamp="20210331 22:36:12.265" level="FAIL">Multiple keywords with name 'Get WebElements' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Get Webelements
+    SeleniumLibrary.Get WebElements</msg>
+<status status="FAIL" starttime="20210331 22:36:12.265" endtime="20210331 22:36:12.265"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${ret}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.265" endtime="20210331 22:36:12.265"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${ret}</var>
+<arg>return document.getElementsByClassName("btn btn-dark btn-lg")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.265" endtime="20210331 22:36:12.265"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${ret}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.265" endtime="20210331 22:36:12.265"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20</arg>
+<arg>1</arg>
+<arg>Execute Javascript</arg>
+<arg>document.getElementById("txt-username").value = 'John Doe'</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.getElementById("txt-username").value = 'John Doe'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.265" endtime="20210331 22:36:12.265"/>
+</kw>
+<status status="NOT RUN" starttime="20210331 22:36:12.265" endtime="20210331 22:36:12.265"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20</arg>
+<arg>1</arg>
+<arg>Execute Javascript</arg>
+<arg>document.getElementById("txt-password").value = 'ThisIsNotAPassword'</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.getElementById("txt-password").value = 'ThisIsNotAPassword'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.265" endtime="20210331 22:36:12.265"/>
+</kw>
+<status status="NOT RUN" starttime="20210331 22:36:12.265" endtime="20210331 22:36:12.265"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20</arg>
+<arg>1</arg>
+<arg>Click Element</arg>
+<arg>css=#btn-login</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element">
+<arg>css=#btn-login</arg>
+<msg timestamp="20210331 22:36:12.273" level="FAIL">Multiple keywords with name 'Click Element' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Click Element
+    SeleniumLibrary.Click Element</msg>
+<status status="FAIL" starttime="20210331 22:36:12.265" endtime="20210331 22:36:12.273"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.265" endtime="20210331 22:36:12.273"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.273" endtime="20210331 22:36:12.273"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.255" endtime="20210331 22:36:12.275">Several failures occurred:
+
+1) Multiple keywords with name 'Click Element' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Click Element
+    SeleniumLibrary.Click Element
+
+2) Multiple keywords with name 'Get Webelements' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Get Webelements
+    SeleniumLibrary.Get WebElements
+
+3) Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Get Text
+    SeleniumLibrary.Get Text
+
+4) Multiple keywords with name 'Get WebElements' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Get Webelements
+    SeleniumLibrary.Get WebElements
+
+5) Multiple keywords with name 'Click Element' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Click Element
+    SeleniumLibrary.Click Element</status>
+</test>
+<test id="s1-t7" name="ExcelToDictionary">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${aaa * 100}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.275" endtime="20210331 22:36:12.275"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${100 * 'aaa'}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.275" endtime="20210331 22:36:12.275"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${100 * '${aaa}'}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.275" endtime="20210331 22:36:12.275"/>
+</kw>
+<kw name="get_all_data_from_excel_to_dic">
+<var>${dict1}=</var>
+<arg>C:/Users/fitim/IdeaProjects/PythonProject/PythonProject/scripts/test.xls</arg>
+<arg>sheet1</arg>
+<msg timestamp="20210331 22:36:12.303" level="FAIL">No keyword with name 'get_all_data_from_excel_to_dic' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.303" endtime="20210331 22:36:12.303"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${len}</var>
+<arg>len(${dict1})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.303" endtime="20210331 22:36:12.303"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${len}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.305" endtime="20210331 22:36:12.305"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${dict1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.305" endtime="20210331 22:36:12.305"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${len}</value>
+<iter>
+<var name="${i}">${i}</var>
+<kw name="Get Dictionary Items" library="Collections">
+<var>${items}</var>
+<arg>${dict1}[${i}]</arg>
+<doc>Returns items of the given ``dictionary`` as a list.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.305" endtime="20210331 22:36:12.305"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${items}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.305" endtime="20210331 22:36:12.305"/>
+</kw>
+<kw name="Iterate Excel Rows">
+<arg>${items}</arg>
+<for flavor="IN">
+<var>${val}</var>
+<value>@{items}</value>
+<iter>
+<var name="${val}">${val}</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${val}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.305" endtime="20210331 22:36:12.305"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.305" endtime="20210331 22:36:12.305"/>
+</iter>
+<status status="PASS" starttime="20210331 22:36:12.305" endtime="20210331 22:36:12.305"/>
+</for>
+<status status="PASS" starttime="20210331 22:36:12.305" endtime="20210331 22:36:12.305"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.305" endtime="20210331 22:36:12.305"/>
+</iter>
+<status status="PASS" starttime="20210331 22:36:12.305" endtime="20210331 22:36:12.305"/>
+</for>
+<status status="FAIL" starttime="20210331 22:36:12.275" endtime="20210331 22:36:12.305">No keyword with name 'get_all_data_from_excel_to_dic' found.</status>
+</test>
+<test id="s1-t8" name="Run Test Document">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${EXECDIR}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.315" endtime="20210331 22:36:12.315"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\testcases</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.315" endtime="20210331 22:36:12.315"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${doc}</var>
+<arg>${docsource}</arg>
+<arg>${dochtmlname}</arg>
+<arg>C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\testcases</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.315" endtime="20210331 22:36:12.315"/>
+</kw>
+<kw name="execute_test_doc">
+<arg>${doc}</arg>
+<arg>${EXECDIR}\\scripts\\run_test_doc.bat</arg>
+<msg timestamp="20210331 22:36:12.335" level="FAIL">No keyword with name 'execute_test_doc' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.335" endtime="20210331 22:36:12.335"/>
+</kw>
+<kw name="open_doc_in_browser">
+<arg>C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\testcases</arg>
+<msg timestamp="20210331 22:36:12.365" level="FAIL">No keyword with name 'open_doc_in_browser' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.363" endtime="20210331 22:36:12.365"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.313" endtime="20210331 22:36:12.365">Several failures occurred:
+
+1) No keyword with name 'execute_test_doc' found.
+
+2) No keyword with name 'open_doc_in_browser' found.</status>
+</test>
+<test id="s1-t9" name="ClipBorad Copy Paste">
+<kw name="clipboard">
+<msg timestamp="20210331 22:36:12.384" level="FAIL">No keyword with name 'clipboard' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.384" endtime="20210331 22:36:12.386"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.365" endtime="20210331 22:36:12.386">No keyword with name 'clipboard' found.</status>
+</test>
+<test id="s1-t10" name="Run Suite Multiple Times">
+<kw name="Create List" library="BuiltIn">
+<var>${file}</var>
+<arg>${EXECDIR}\\datadriven\\DataDrivenTest.robot</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.386" endtime="20210331 22:36:12.386"/>
+</kw>
+<kw name="execute_entire_suite">
+<arg>${EXECDIR}\\scripts\\entire_suite.bat</arg>
+<arg>${file}</arg>
+<msg timestamp="20210331 22:36:12.406" level="FAIL">No keyword with name 'execute_entire_suite' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.406" endtime="20210331 22:36:12.406"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.386" endtime="20210331 22:36:12.414">No keyword with name 'execute_entire_suite' found.</status>
+</test>
+<test id="s1-t11" name="Run Entire Suite">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Run Entire Suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.416" endtime="20210331 22:36:12.416"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.416" endtime="20210331 22:36:12.416"/>
+</test>
+<test id="s1-t12" name="Test Inline Expression">
+<kw name="Set Variable" library="BuiltIn">
+<var>${new_URL}</var>
+<arg>${URL.replace('https:', 'http:')}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.416" endtime="20210331 22:36:12.416"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.416" endtime="20210331 22:36:12.416"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.416" endtime="20210331 22:36:12.424"/>
+</test>
+<test id="s1-t13" name="Test One">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://www.google.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.426" endtime="20210331 22:36:12.426"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.426" endtime="20210331 22:36:12.426"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.424" endtime="20210331 22:36:12.426"/>
+</test>
+<test id="s1-t14" name="Demo">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${{datetime.date.today()}}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.426" endtime="20210331 22:36:12.426"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${{ {'id': 1, 'name': 'Example', 'children': [7, 9]} }}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.426" endtime="20210331 22:36:12.426"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${{len('${var}') &gt; 3}}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.426" endtime="20210331 22:36:12.426"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.426" endtime="20210331 22:36:12.426"/>
+</test>
+<test id="s1-t15" name="Dynamic Variable">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${${v1}${v2}}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.436" endtime="20210331 22:36:12.436"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${${fname}${lname}}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.436" endtime="20210331 22:36:12.436"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.434" endtime="20210331 22:36:12.436"/>
+</test>
+<test id="s1-t16" name="Use LSP service">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.google.com</arg>
+<arg>headlesschrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.436" endtime="20210331 22:36:12.436"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.436" endtime="20210331 22:36:12.436"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.436" endtime="20210331 22:36:12.436"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.436" endtime="20210331 22:36:12.444"/>
+</test>
+<test id="s1-t17" name="Iterate Dictionary">
+<kw name="loop">
+<msg timestamp="20210331 22:36:12.466" level="FAIL">No keyword with name 'loop' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.466" endtime="20210331 22:36:12.466"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.444" endtime="20210331 22:36:12.466">No keyword with name 'loop' found.</status>
+</test>
+<test id="s1-t18" name="SimpleFirefoxGoogleTest">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.google.com</arg>
+<arg>FireFox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.466" endtime="20210331 22:36:12.466"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.466" endtime="20210331 22:36:12.474"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.474" endtime="20210331 22:36:12.474"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.466" endtime="20210331 22:36:12.474"/>
+</test>
+<test id="s1-t19" name="Get Full Page Screenshot">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://dzone.com/articles/perform-actions-using-javascript-in-python-seleniu</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.476" endtime="20210331 22:36:12.476"/>
+</kw>
+<kw name="Capture Full Page Screenshot">
+<msg timestamp="20210331 22:36:12.506" level="FAIL">No keyword with name 'Capture Full Page Screenshot' found. Did you mean:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<status status="FAIL" starttime="20210331 22:36:12.504" endtime="20210331 22:36:12.506"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.506" endtime="20210331 22:36:12.506"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.476" endtime="20210331 22:36:12.506">No keyword with name 'Capture Full Page Screenshot' found. Did you mean:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</status>
+</test>
+<test id="s1-t20" name="Get Full Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://stackoverflow.com/</arg>
+<arg>chrome</arg>
+<arg>headlesschrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.506" endtime="20210331 22:36:12.506"/>
+</kw>
+<kw name="Capture Full Page">
+<msg timestamp="20210331 22:36:12.535" level="FAIL">No keyword with name 'Capture Full Page' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.535" endtime="20210331 22:36:12.535"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.537" endtime="20210331 22:36:12.537"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.506" endtime="20210331 22:36:12.537">No keyword with name 'Capture Full Page' found.</status>
+</test>
+<test id="s1-t21" name="Get Full Page2">
+<kw name="take_fullpage_sceenshot">
+<arg>https://dzone.com/articles/perform-actions-using-javascript-in-python-seleniu</arg>
+<msg timestamp="20210331 22:36:12.567" level="FAIL">No keyword with name 'take_fullpage_sceenshot' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.567" endtime="20210331 22:36:12.567"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.537" endtime="20210331 22:36:12.567">No keyword with name 'take_fullpage_sceenshot' found.</status>
+</test>
+<test id="s1-t22" name="run-pabot-test-suites">
+<kw name="pabot">
+<msg timestamp="20210331 22:36:12.587" level="FAIL">No keyword with name 'pabot' found. Did you mean:
+    requests.Post</msg>
+<status status="FAIL" starttime="20210331 22:36:12.587" endtime="20210331 22:36:12.587"/>
+</kw>
+<kw name="rebot">
+<msg timestamp="20210331 22:36:12.607" level="FAIL">No keyword with name 'rebot' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.607" endtime="20210331 22:36:12.607"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.567" endtime="20210331 22:36:12.607">Several failures occurred:
+
+1) No keyword with name 'pabot' found. Did you mean:
+    requests.Post
+
+2) No keyword with name 'rebot' found.</status>
+</test>
+<test id="s1-t23" name="combine test results">
+<kw name="rebot">
+<msg timestamp="20210331 22:36:12.637" level="FAIL">No keyword with name 'rebot' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.637" endtime="20210331 22:36:12.637"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.617" endtime="20210331 22:36:12.637">No keyword with name 'rebot' found.</status>
+</test>
+<test id="s1-t24" name="date-time">
+<kw name="add date to date">
+<msg timestamp="20210331 22:36:12.657" level="FAIL">No keyword with name 'add date to date' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.657" endtime="20210331 22:36:12.666"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.637" endtime="20210331 22:36:12.666">No keyword with name 'add date to date' found.</status>
+</test>
+<test id="s1-t25" name="exel-lib">
+<kw name="Comment" library="BuiltIn">
+<arg>use-excel</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.668" endtime="20210331 22:36:12.668"/>
+</kw>
+<kw name="excel-keyword">
+<msg timestamp="20210331 22:36:12.688" level="FAIL">No keyword with name 'excel-keyword' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.688" endtime="20210331 22:36:12.688"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.666" endtime="20210331 22:36:12.688">No keyword with name 'excel-keyword' found.</status>
+</test>
+<test id="s1-t26" name="Browser-test">
+<kw name="open-google-firefox">
+<msg timestamp="20210331 22:36:12.718" level="FAIL">No keyword with name 'open-google-firefox' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.716" endtime="20210331 22:36:12.718"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.718" endtime="20210331 22:36:12.718"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.688" endtime="20210331 22:36:12.718">No keyword with name 'open-google-firefox' found.</status>
+</test>
+<test id="s1-t27" name="ElementBackColour">
+<kw name="getElementColour">
+<msg timestamp="20210331 22:36:12.738" level="FAIL">No keyword with name 'getElementColour' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.738" endtime="20210331 22:36:12.738"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.718" endtime="20210331 22:36:12.738">No keyword with name 'getElementColour' found.</status>
+</test>
+<test id="s1-t28" name="getJsonDictionary">
+<kw name="test dictionary">
+<msg timestamp="20210331 22:36:12.766" level="FAIL">No keyword with name 'test dictionary' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.758" endtime="20210331 22:36:12.766"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>"test": [</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.766" endtime="20210331 22:36:12.766"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>{"firstname":"alex", "lastname":"leda"},</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.768" endtime="20210331 22:36:12.768"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>{"firstname":"john", "lastname":"parsons"},</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.768" endtime="20210331 22:36:12.768"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>{"firstname":"rick", "lastname":"roll"}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.768" endtime="20210331 22:36:12.768"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>]</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.768" endtime="20210331 22:36:12.768"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.738" endtime="20210331 22:36:12.768">No keyword with name 'test dictionary' found.</status>
+</test>
+<test id="s1-t29" name="Example">
+<kw name="Catenate" library="BuiltIn">
+<var>${json}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>{"test": [{"firstname":"alex", "lastname":"leda"},{"firstname":"john", "lastname":"parsons"},{"firstname":"rick", "lastname":"roll"}]}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.768" endtime="20210331 22:36:12.768"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${data}</var>
+<arg>json.loads('''${json}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.768" endtime="20210331 22:36:12.768"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${length}</var>
+<arg>${data["test"][0]["firstname"]}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.768" endtime="20210331 22:36:12.768"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${max}</var>
+<arg>${length-1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.768" endtime="20210331 22:36:12.768"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${count}</var>
+<arg>${0}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.776" endtime="20210331 22:36:12.776"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${item}</var>
+<value>${count}</value>
+<value>${max}</value>
+<iter>
+<var name="${item}">${item}</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${firstname}</var>
+<arg>${data["test"][${item}]["firstname"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.776" endtime="20210331 22:36:12.776"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Should be equal as strings</arg>
+<arg>${firstname}</arg>
+<arg>john</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${firstname}</arg>
+<arg>john</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.778" endtime="20210331 22:36:12.778"/>
+</kw>
+<status status="NOT RUN" starttime="20210331 22:36:12.778" endtime="20210331 22:36:12.778"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${status}</arg>
+<arg>Log to console</arg>
+<arg>HERE ISS JOHNNY!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log To Console" library="BuiltIn">
+<arg>HERE ISS JOHNNY!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.778" endtime="20210331 22:36:12.778"/>
+</kw>
+<status status="NOT RUN" starttime="20210331 22:36:12.778" endtime="20210331 22:36:12.778"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.776" endtime="20210331 22:36:12.778"/>
+</iter>
+<status status="PASS" starttime="20210331 22:36:12.776" endtime="20210331 22:36:12.778"/>
+</for>
+<status status="PASS" starttime="20210331 22:36:12.768" endtime="20210331 22:36:12.778"/>
+</test>
+<test id="s1-t30" name="Example2">
+<kw name="Set Variable" library="BuiltIn">
+<var>${find-what}</var>
+<arg>john</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.778" endtime="20210331 22:36:12.778"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${json}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>{"test": [{"firstname":"alex", "lastname":"leda"},{"firstname":"john", "lastname":"parsons"},{"firstname":"rick", "lastname":"roll"}]}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.778" endtime="20210331 22:36:12.778"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${data}</var>
+<arg>json.loads('''${json}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.778" endtime="20210331 22:36:12.778"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${firstname}</var>
+<arg>${data}</arg>
+<arg>$..firstname</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.778" endtime="20210331 22:36:12.786"/>
+</kw>
+<for flavor="IN">
+<var>${x}</var>
+<value>@{firstname}</value>
+<iter>
+<var name="${x}">${x}</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${x}' == '${find-what}'</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.786" endtime="20210331 22:36:12.786"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.786" endtime="20210331 22:36:12.786"/>
+</iter>
+<status status="PASS" starttime="20210331 22:36:12.786" endtime="20210331 22:36:12.786"/>
+</for>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${x}'!= '${find-what}'</arg>
+<arg>error-handling</arg>
+<arg>${find-what}</arg>
+<arg>ELSE</arg>
+<arg>Log To Console</arg>
+<arg>${x}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="error-handling">
+<arg>${find-what}</arg>
+<msg timestamp="20210331 22:36:12.808" level="FAIL">No keyword with name 'error-handling' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.808" endtime="20210331 22:36:12.808"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${x}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.808" endtime="20210331 22:36:12.808"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.788" endtime="20210331 22:36:12.808"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>this is comment</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.808" endtime="20210331 22:36:12.808"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.778" endtime="20210331 22:36:12.808">No keyword with name 'error-handling' found.</status>
+</test>
+<test id="s1-t31" name="imapGmail">
+<kw name="imap">
+<msg timestamp="20210331 22:36:12.829" level="FAIL">No keyword with name 'imap' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.829" endtime="20210331 22:36:12.829"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.808" endtime="20210331 22:36:12.829">No keyword with name 'imap' found.</status>
+</test>
+<test id="s1-t32" name="Hello serial test">
+<kw name="Write Data" library="SerialLibrary">
+<arg>Hello World</arg>
+<doc>Writes data into the port.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.829" endtime="20210331 22:36:12.837"/>
+</kw>
+<kw name="Read Data Should Be" library="SerialLibrary">
+<arg>Hello World</arg>
+<doc>Fails if all read bytes from the port not equals to specifed data.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.837" endtime="20210331 22:36:12.839"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.829" endtime="20210331 22:36:12.839"/>
+</test>
+<test id="s1-t33" name="Read Until should read until terminator or size">
+<kw name="Set Variable" library="BuiltIn">
+<var>${bytes}</var>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.839" endtime="20210331 22:36:12.839"/>
+</kw>
+<kw name="Write Data" library="SerialLibrary">
+<arg>01 23 45 0A 67 89 AB CD EF</arg>
+<doc>Writes data into the port.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.839" endtime="20210331 22:36:12.839"/>
+</kw>
+<kw name="Read Until" library="SerialLibrary">
+<var>${read}</var>
+<doc>Read until a termination sequence is found, size exceeded or timeout.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.839" endtime="20210331 22:36:12.839"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${read}</arg>
+<arg>01 23 45 0A</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.839" endtime="20210331 22:36:12.839"/>
+</kw>
+<kw name="Read Until" library="SerialLibrary">
+<var>${read}</var>
+<arg>size=2</arg>
+<doc>Read until a termination sequence is found, size exceeded or timeout.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.839" endtime="20210331 22:36:12.839"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${read}</arg>
+<arg>67 89</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.839" endtime="20210331 22:36:12.839"/>
+</kw>
+<kw name="Read Until" library="SerialLibrary">
+<var>${read}</var>
+<arg>size=2</arg>
+<doc>Read until a termination sequence is found, size exceeded or timeout.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.847" endtime="20210331 22:36:12.847"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${read}</arg>
+<arg>AB CD</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.847" endtime="20210331 22:36:12.847"/>
+</kw>
+<kw name="Read Until" library="SerialLibrary">
+<var>${read}</var>
+<arg>size=1</arg>
+<doc>Read until a termination sequence is found, size exceeded or timeout.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.847" endtime="20210331 22:36:12.847"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${read}</arg>
+<arg>EF</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.849" endtime="20210331 22:36:12.849"/>
+</kw>
+<kw name="Read Until" library="SerialLibrary">
+<var>${read}</var>
+<doc>Read until a termination sequence is found, size exceeded or timeout.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.849" endtime="20210331 22:36:12.849"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${read}</arg>
+<arg>${EMPTY}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.849" endtime="20210331 22:36:12.849"/>
+</kw>
+<kw name="Delete All Ports" library="SerialLibrary" type="TEARDOWN">
+<doc>Deletes all ports maintained in the library instance.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.849" endtime="20210331 22:36:12.849"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.839" endtime="20210331 22:36:12.849"/>
+</test>
+<test id="s1-t34" name="Increment">
+<kw name="Create File" library="OperatingSystem">
+<arg>C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\testcases/increment.txt</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.849" endtime="20210331 22:36:12.849"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${store}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.849" endtime="20210331 22:36:12.849"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${ret}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.849" endtime="20210331 22:36:12.857"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${store}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.857" endtime="20210331 22:36:12.857"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${test}</var>
+<arg>test</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.857" endtime="20210331 22:36:12.857"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${index}</var>
+<arg>${100}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.859" endtime="20210331 22:36:12.859"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>10</value>
+<iter>
+<var name="${i}">${i}</var>
+<kw name="Log" library="BuiltIn">
+<arg>${test}${index}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.859" endtime="20210331 22:36:12.859"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${test}${index}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.859" endtime="20210331 22:36:12.859"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${store}</arg>
+<arg>${test}${index}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.859" endtime="20210331 22:36:12.859"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\testcases/increment.txt</arg>
+<arg>${test}${index}\n</arg>
+<arg>encoding=UTF-8</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.859" endtime="20210331 22:36:12.859"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.859" endtime="20210331 22:36:12.859"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.859" endtime="20210331 22:36:12.859"/>
+</iter>
+<status status="PASS" starttime="20210331 22:36:12.859" endtime="20210331 22:36:12.859"/>
+</for>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${store}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.859" endtime="20210331 22:36:12.859"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${content}</var>
+<arg>C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\testcases/increment.txt</arg>
+<arg>encoding=UTF-8</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.859" endtime="20210331 22:36:12.867"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.867" endtime="20210331 22:36:12.867"/>
+</kw>
+<kw name="Split To Lines" library="String">
+<var>@{lines}</var>
+<arg>${content}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.867" endtime="20210331 22:36:12.869"/>
+</kw>
+<for flavor="IN">
+<var>${line}</var>
+<value>@{lines}</value>
+<iter>
+<var name="${line}">${line}</var>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${Value}</var>
+<arg>${line}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.869" endtime="20210331 22:36:12.869"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ret}</arg>
+<arg>${line}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.869" endtime="20210331 22:36:12.869"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.869" endtime="20210331 22:36:12.869"/>
+</iter>
+<status status="PASS" starttime="20210331 22:36:12.869" endtime="20210331 22:36:12.869"/>
+</for>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random value}</var>
+<arg>random.choice($ret)</arg>
+<arg>modules=random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.869" endtime="20210331 22:36:12.869"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${random value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.869" endtime="20210331 22:36:12.869"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.849" endtime="20210331 22:36:12.869"/>
+</test>
+<test id="s1-t35" name="Increment In Every Test Run">
+<kw name="Log To Console" library="BuiltIn">
+<arg>testcomp${counter}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.869" endtime="20210331 22:36:12.877"/>
+</kw>
+<kw name="Increment Counter">
+<msg timestamp="20210331 22:36:12.900" level="FAIL">No keyword with name 'Increment Counter' found.</msg>
+<status status="FAIL" starttime="20210331 22:36:12.900" endtime="20210331 22:36:12.900"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.869" endtime="20210331 22:36:12.900">No keyword with name 'Increment Counter' found.</status>
+</test>
+<test id="s1-t36" name="Example3">
+<kw name="Set Variable" library="BuiltIn">
+<var>${NUMBER}</var>
+<arg>${100}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.900" endtime="20210331 22:36:12.900"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Today is ${{datetime.date.today()}}.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.900" endtime="20210331 22:36:12.900"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>The lucky number is ${{random.randint(0, 100)}}.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.900" endtime="20210331 22:36:12.900"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Number is ${NUMBER} and the next number is ${{$NUMBER + 1}}.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.900" endtime="20210331 22:36:12.900"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Let's go crazy: ${{ {str(i): i for i in range($NUMBER)} }}.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.900" endtime="20210331 22:36:12.908"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.900" endtime="20210331 22:36:12.908"/>
+</test>
+<test id="s1-t37" name="GetLatLong">
+<kw name="Set Log Level" library="BuiltIn">
+<arg>TRACE</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.910" endtime="20210331 22:36:12.910"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\geo\\where.html</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.910" endtime="20210331 22:36:12.910"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.910" endtime="20210331 22:36:12.910"/>
+</kw>
+<kw name="Click Element">
+<arg>css=#map_canvas &gt; div:nth-child(2) &gt; table &gt; tr &gt; td:nth-child(2) &gt; button</arg>
+<msg timestamp="20210331 22:36:12.910" level="FAIL">Multiple keywords with name 'Click Element' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Click Element
+    SeleniumLibrary.Click Element</msg>
+<status status="FAIL" starttime="20210331 22:36:12.910" endtime="20210331 22:36:12.910"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.910" endtime="20210331 22:36:12.910"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${x}</var>
+<arg>${0}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.910" endtime="20210331 22:36:12.910"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${args}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.910" endtime="20210331 22:36:12.910"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>6</value>
+<iter>
+<var name="${i}">${i}</var>
+<kw name="Get Element Attribute">
+<var>${ret}=</var>
+<arg>css=#gmimap${x} &gt; area</arg>
+<arg>title</arg>
+<msg timestamp="20210331 22:36:12.920" level="FAIL">Multiple keywords with name 'Get Element Attribute' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Get Element Attribute
+    SeleniumLibrary.Get Element Attribute</msg>
+<status status="FAIL" starttime="20210331 22:36:12.918" endtime="20210331 22:36:12.920"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${ret}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.920" endtime="20210331 22:36:12.920"/>
+</kw>
+<kw name="Fetch From Left" library="String">
+<var>${ret}</var>
+<arg>${ret}</arg>
+<arg>University</arg>
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.920" endtime="20210331 22:36:12.920"/>
+</kw>
+<kw name="Replace String Using Regexp" library="String">
+<var>${ret}</var>
+<arg>${ret}</arg>
+<arg>(^[ ]+|[ ]+$)</arg>
+<arg>\</arg>
+<doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.920" endtime="20210331 22:36:12.920"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${args}</arg>
+<arg>${x}</arg>
+<arg>${ret}</arg>
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.920" endtime="20210331 22:36:12.920"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${x}</var>
+<arg>${x}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.920" endtime="20210331 22:36:12.920"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:12.918" endtime="20210331 22:36:12.920"/>
+</iter>
+<status status="FAIL" starttime="20210331 22:36:12.910" endtime="20210331 22:36:12.920"/>
+</for>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${args}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.920" endtime="20210331 22:36:12.920"/>
+</kw>
+<kw name="Get Dictionary Items" library="Collections">
+<var>${items}</var>
+<arg>${args}</arg>
+<doc>Returns items of the given ``dictionary`` as a list.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.920" endtime="20210331 22:36:12.920"/>
+</kw>
+<for flavor="IN">
+<var>${key}</var>
+<var>${value}</var>
+<value>@{items}</value>
+<iter>
+<var name="${key}">${key}</var>
+<var name="${value}">${value}</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.920" endtime="20210331 22:36:12.928"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.920" endtime="20210331 22:36:12.928"/>
+</iter>
+<status status="PASS" starttime="20210331 22:36:12.920" endtime="20210331 22:36:12.928"/>
+</for>
+<status status="FAIL" starttime="20210331 22:36:12.908" endtime="20210331 22:36:12.928">Several failures occurred:
+
+1) Multiple keywords with name 'Click Element' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Click Element
+    SeleniumLibrary.Click Element
+
+2) Multiple keywords with name 'Get Element Attribute' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Get Element Attribute
+    SeleniumLibrary.Get Element Attribute</status>
+</test>
+<test id="s1-t38" name="Test">
+<kw name="pos and named">
+<arg>pos1</arg>
+<arg>pos2</arg>
+<arg>named=named1</arg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${pos}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.930" endtime="20210331 22:36:12.930"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${named}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.930" endtime="20210331 22:36:12.930"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.930" endtime="20210331 22:36:12.930"/>
+</kw>
+<status status="PASS" starttime="20210331 22:36:12.930" endtime="20210331 22:36:12.930"/>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="NOT RUN" starttime="20210331 22:36:12.938" endtime="20210331 22:36:12.938"/>
+</kw>
+<status status="FAIL" starttime="20210331 22:36:09.764" endtime="20210331 22:36:12.938"/>
+</suite>
+<statistics>
+<total>
+<stat pass="16" fail="22" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="16" fail="22" skip="0" id="s1" name="robotTestSuite">robotTestSuite</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210331 22:36:09.865" level="ERROR">Error in file 'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot' on line 6: Test library 'scripts\Colour.py' does not exist.</msg>
+<msg timestamp="20210331 22:36:10.440" level="ERROR">Error in file 'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot' on line 12: Test library 'scripts\date_time.py' does not exist.</msg>
+<msg timestamp="20210331 22:36:10.450" level="ERROR">Error in file 'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot' on line 13: Test library 'scripts\excelUtil.py' does not exist.</msg>
+<msg timestamp="20210331 22:36:11.438" level="ERROR">Error in file 'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot' on line 18: Test library 'scripts\ChromeDriverAutomation.py' does not exist.</msg>
+<msg timestamp="20210331 22:36:11.448" level="ERROR">Error in file 'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot' on line 19: Test library 'scripts\run_pabot.py' does not exist.</msg>
+<msg timestamp="20210331 22:36:11.456" level="ERROR">Error in file 'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot' on line 20: Test library 'scripts\screenshot.py' does not exist.</msg>
+<msg timestamp="20210331 22:36:11.458" level="ERROR">Error in file 'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot' on line 21: Resource file 'keywords\TestSuiteKeywords.robot' does not exist.</msg>
+<msg timestamp="20210331 22:36:11.469" level="ERROR">Error in file 'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot' on line 23: Test library 'scripts\date_time.py' does not exist.</msg>
+<msg timestamp="20210331 22:36:12.053" level="ERROR">Error in file 'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot' on line 29: Test library 'scripts\whole_suite.py' does not exist.</msg>
+<msg timestamp="20210331 22:36:12.081" level="ERROR">Error in file 'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot' on line 31: Test library 'scripts\execute_document.py' does not exist.</msg>
+<msg timestamp="20210331 22:36:12.083" level="ERROR">Error in file 'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot' on line 32: Test library 'scripts\xls_to_dict.py' does not exist.</msg>
+<msg timestamp="20210331 22:36:12.114" level="ERROR">Error in file 'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot' on line 34: Test library 'pabotRunnerTest\pabotRunner.py' does not exist.</msg>
+<msg timestamp="20210331 22:36:12.122" level="ERROR">Error in file 'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot' on line 35: Test library 'scripts\ResultModifier.py' does not exist.</msg>
+<msg timestamp="20210331 22:36:12.124" level="ERROR">Error in file 'C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot' on line 36: Test library 'scripts\TestEnumerator.py' does not exist.</msg>
+</errors>
+</robot>
