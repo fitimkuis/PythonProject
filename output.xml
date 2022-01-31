@@ -1,22 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.1 (Python 3.9.2 on win32)" generated="20220131 20:09:22.919" rpa="false" schemaversion="2">
+<robot generator="Robot 4.0.1 (Python 3.9.2 on win32)" generated="20220131 21:25:51.023" rpa="false" schemaversion="2">
 <suite id="s1" name="robotTestSuite" source="C:\Users\fitim\IdeaProjects\PythonProject\PythonProject\testcases\robotTestSuite.robot">
-<test id="s1-t1" name="CreateFakeSSN">
-<kw name="Create Ssn" library="fake_ssn">
-<var>${ret}</var>
-<msg timestamp="20220131 20:09:30.369" level="INFO">180678-310K</msg>
-<msg timestamp="20220131 20:09:30.369" level="INFO">${ret} = 180678-310K</msg>
-<status status="PASS" starttime="20220131 20:09:30.369" endtime="20220131 20:09:30.369"/>
+<test id="s1-t1" name="CombineDictionaries">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{combined}</var>
+<arg>&amp;{user1}</arg>
+<arg>&amp;{phone2}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220131 21:25:59.163" level="INFO">&amp;{combined} = { fname=DIALPAD | account_type=o365 | dept=ROBOT DEPT | name=SMSNG | version=11 | port=4724 | platformName=android | type=tab }</msg>
+<status status="PASS" starttime="20220131 21:25:59.163" endtime="20220131 21:25:59.163"/>
 </kw>
 <kw name="Log" library="BuiltIn">
-<arg>${ret}</arg>
+<arg>${combined}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220131 20:09:30.369" level="INFO">180678-310K</msg>
-<status status="PASS" starttime="20220131 20:09:30.369" endtime="20220131 20:09:30.369"/>
+<msg timestamp="20220131 21:25:59.163" level="INFO">{'fname': 'DIALPAD', 'account_type': 'o365', 'dept': 'ROBOT DEPT', 'name': 'SMSNG', 'version': '11', 'port': '4724', 'platformName': 'android', 'type': 'tab'}</msg>
+<status status="PASS" starttime="20220131 21:25:59.163" endtime="20220131 21:25:59.163"/>
 </kw>
-<status status="PASS" starttime="20220131 20:09:30.369" endtime="20220131 20:09:30.369"/>
+<kw name="Combine Dictionaries" library="fake_ssn">
+<var>&amp;{combinedTwo}</var>
+<arg>${user1}</arg>
+<arg>${phone2}</arg>
+<msg timestamp="20220131 21:25:59.163" level="INFO">&amp;{combinedTwo} = { fname=DIALPAD | account_type=o365 | dept=ROBOT DEPT | name=SMSNG | version=11 | port=4724 | platformName=android | type=tab }</msg>
+<status status="PASS" starttime="20220131 21:25:59.163" endtime="20220131 21:25:59.163"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${combinedTwo}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220131 21:25:59.163" level="INFO">{'fname': 'DIALPAD', 'account_type': 'o365', 'dept': 'ROBOT DEPT', 'name': 'SMSNG', 'version': '11', 'port': '4724', 'platformName': 'android', 'type': 'tab'}</msg>
+<status status="PASS" starttime="20220131 21:25:59.163" endtime="20220131 21:25:59.163"/>
+</kw>
+<kw name="Merge" library="fake_ssn">
+<var>&amp;{combinedThree}</var>
+<arg>${user1}</arg>
+<arg>${phone2}</arg>
+<msg timestamp="20220131 21:25:59.163" level="INFO">&amp;{combinedThree} = { account_type=o365 | port=4724 | type=tab | platformName=android | name=SMSNG | dept=ROBOT DEPT | version=11 | fname=DIALPAD }</msg>
+<status status="PASS" starttime="20220131 21:25:59.163" endtime="20220131 21:25:59.163"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${combinedThree}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220131 21:25:59.163" level="INFO">{'account_type': 'o365', 'port': '4724', 'type': 'tab', 'platformName': 'android', 'name': 'SMSNG', 'dept': 'ROBOT DEPT', 'version': '11', 'fname': 'DIALPAD'}</msg>
+<status status="PASS" starttime="20220131 21:25:59.163" endtime="20220131 21:25:59.163"/>
+</kw>
+<status status="PASS" starttime="20220131 21:25:59.148" endtime="20220131 21:25:59.163"/>
 </test>
-<status status="PASS" starttime="20220131 20:09:22.935" endtime="20220131 20:09:30.385"/>
+<status status="PASS" starttime="20220131 21:25:51.039" endtime="20220131 21:25:59.163"/>
 </suite>
 <statistics>
 <total>

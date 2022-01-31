@@ -84,7 +84,18 @@ ${PACKAGE_NAME}     com.android.calculator2
 ${url1}=    https://www.google.com
 ${url2}=    https://www.bing.com
 
+&{user1}    fname=DIALPAD  account_type=o365  dept=ROBOT DEPT
+&{phone2}   name=SMSNG  version=11    port=4724  platformName=android   type=tab
+
 *** Test Cases ***
+CombineDictionaries
+    &{combined}   Create Dictionary    &{user1}    &{phone2}
+    Log    ${combined}
+    &{combinedTwo}    combine_dictionaries    ${user1}    ${phone2}
+    Log    ${combinedTwo}
+    &{combinedThree}    merge    ${user1}    ${phone2}
+    Log    ${combinedThree}
+
 CreateFakeSSN
     ${ret}    create_ssn
     Log    ${ret}
