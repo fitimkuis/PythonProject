@@ -239,6 +239,51 @@ clipboard
     ${var}=             Paste From Clipboard
     Clear Clipboard
 
+Switch to Page 1
+    Browser.Switch Page     ${pids}[0]
 
+Switch to Page 2
+    Browser.Switch Page     ${pids}[1]
+
+Store Active Browser Id
+    ${active_id}=    Browser.Get Browser Ids   ACTIVE
+    #${active_id}=    Split String    ${active_id}[0]    =
+    Log To Console    ${active_id}[0]
+    Append To List    ${bids}    ${active_id}[0]
+
+Store Active Context Id
+    ${active_id}=    Browser.Get Context Ids   ACTIVE    ACTIVE
+    Log To Console    ${active_id}
+    # ${active_id}=    Split String    ${active_id}[0]    =
+    Log To Console    ${active_id}[0]
+    Append To List    ${cids}    ${active_id}[0]
+
+Store Active Page Id
+    [Arguments]    ${new_id}
+    ${active_id}=    Browser.Get Page Ids   ACTIVE    ACTIVE    ACTIVE
+    # ${active_id}=    Split String    ${active_id}[0]    =
+    Log To Console    ${active_id}[0]
+    Append To List    ${pids}    ${new_id}
+
+Create Suite Ecosystem
+    # Create 1B-1C-2P Ecosystem
+
+    # 1st Browser
+    Browser.New Browser    chromium    headless=false
+    Store Active Browser Id
+
+    # 1st Context of 1st Browser
+    Browser.New Context    viewport={'width': 1920, 'height': 1080}
+    Store Active Context Id
+
+    # 1st Page of 1st Context of 1st Context
+    Browser.New Page       ${url1}
+    ${current}=    Switch Page    CURRENT
+    Store Active Page Id    ${current}
+
+    # 2nd Page of 1st Context of 1st Context
+    Browser.New Page       ${url2}
+    ${current}=    Switch Page    CURRENT
+    Store Active Page Id    ${current}
 
 

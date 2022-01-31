@@ -1,6 +1,6 @@
 *** Settings ***
-
-Suite TearDown    Close All Browsers
+#Suite Setup       Create Suite Ecosystem
+#Suite TearDown    Close All Browsers
 
 Library           webcolors
 Library           scripts\\Colour.py
@@ -35,6 +35,11 @@ Library           scripts\\ResultModifier.py
 Library           scripts\\TestEnumerator.py
 Library           SeleniumLibrary
 Library           Screenshot
+Library           Process
+Library           Browser
+Library           scripts\\drag_drop.py
+Library           scripts\\fake_ssn.py
+
 
 
 *** Variables ***
@@ -73,19 +78,87 @@ ${DEVICE_NAME}    emulator-5554
 ${Activity_NAME}        com.android.calculator2.Calculator
 ${PACKAGE_NAME}     com.android.calculator2
 
+@{bids}
+@{cids}
+@{pids}
+${url1}=    https://www.google.com
+${url2}=    https://www.bing.com
+
 *** Test Cases ***
+CreateFakeSSN
+    ${ret}    create_ssn
+    Log    ${ret}
+
+DragDropTest
+    #setUp
+    test_drag_drop    https://jqueryui.com/draggable/    https://jqueryui.com/droppable/    C:/Users/fitim/bin/chromedriver.exe
+    #tearDown
+
+Drag and Drop Test
+    SeleniumLibrary.Open Browser    https://www.w3schools.com/html/html5_draganddrop.asp    chrome
+    BuiltIn.Wait Until Keyword Succeeds    20    1    Click element    css=#accept-choices
+    BuiltIn.Wait Until Keyword Succeeds    20    1    SeleniumLibrary.Drag And Drop    css=#drag1    css=#div2
+    Sleep    2
+    SeleniumLibrary.Close Browser
+
+Update chrome driver
+    download_chromedriver
+
+Setup Verification
+    [Tags]   UI    dev
+    ${bids}=   Browser.Get Browser Ids
+    Log To console    ${bids}
+
+    ${bids}=   Browser.Get Browser Ids
+    Log To console    ${cids}
+
+    ${pids}=   Browser.Get Browser Ids
+    Log To console    ${pids}
+
+Page Switch tests
+    [Tags]   UI    dev
+    Switch to Page 1
+    Browser.Get Element   text=Gmail
+    Switch to Page 2
+    Browser.Get Element   text=© 2021 Microsoft
+
+Return Code RC example
+    ${result} =    Run Process    java    -jar    C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\jar\\jar_example.jar    #--option    value
+    Should Be Equal As Integers    ${result.rc}    1
+    Log    ${result.stdout}
+    #${rc}    Run Process    java    -jar    ${jars}${/}example.jar    --option    value
+    ${rc}    Set Variable     9
+    ${rc}    Convert To Integer    ${rc}
+    Should Be True    $rc < 10    Return code greater than 10
+    Run Process	    python    -c    print('Hello, world!')    alias=myproc
+    # Get result object
+    ${result} =    Get Process Result    myproc
+    Should Be Equal    ${result.rc}    ${0}
+    Should Be Equal    ${result.stdout}    Hello, world!
+    Should Be Empty    ${result.stderr}
+    # Get one attribute
+    ${stdout} =    Get Process Result    myproc    stdout=true
+    Should Be Equal    ${stdout}    Hello, world!
+    # Multiple attributes
+    ${stdout}    ${stderr} =    Get Process Result    myproc    stdout=yes    stderr=yes
+    Should Be Equal    ${stdout}    Hello, world!
+    Should Be Empty    ${stderr}
+
 ChromeDriverIgnore
     #download_chromedriver
     Open Browser    http://demoaut.katalon.com/    chrome    options=add_argument("--disable-popup-blocking"); add_argument("--ignore-certificate-errors")
     Take Screenshot Without Embedding    shotti
 
-Example Test
+Example Test1
+    New Page    https://playwright.dev
+    Browser.Get Text    h1    should start with    Playwright
+
+Example Test2
     Library           Browser
     New Page    https://playwright.dev
     Browser.Get Text    h1    contains    Playwright
 
 Starting a browser with a page
-    Library           Browser
     New Browser    chromium    headless=false
     New Context    viewport={'width': 1920, 'height': 1080}
     New Page       https://marketsquare.github.io/robotframework-browser/Browser.html
@@ -434,7 +507,7 @@ Example3
 
 GetLatLong
     Set Log Level	TRACE
-    Open Browser    C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\geo\\where.html   chrome
+    SeleniumLibrary.Open Browser    C:\\Users\\fitim\\IdeaProjects\\PythonProject\\PythonProject\\geo\\where.html   chrome
     Maximize Browser Window
     Click Element    css=#map_canvas > div:nth-child(2) > table > tr > td:nth-child(2) > button
     Sleep    1
