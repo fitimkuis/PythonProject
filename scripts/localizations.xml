@@ -1,0 +1,7 @@
+<resources>
+    <stringarray name="country_codes">
+        <item>AR</item><item>AU</item> <item>AT</item> <item>BE</item> <item>CA</item> <item>CN</item> <item>CZ</item> <item>DK</item> <item>EE</item> <item>FI</item> <item>FR</item> <item>DE</item> <item>HK</item><item>HU</item> <item>IS</item> <item>IE</item> <item>IL</item> <item>IT</item>
+        <item>JP</item> <item>LV</item> <item>LT</item> <item>LU</item> <item>MY</item> <item>NL</item> <item>NZ</item> <item>NO</item> <item>PL</item> <item>RU</item> <item>SG</item> <item>SK</item> <item>ES</item> <item>SE</item> <item>CH</item> <item>TW</item> <item>TH</item> <item>GB</item>
+        <item>US</item> <item>VN</item> <item>BG</item> <item>HR</item> <item>PT</item> <item>RO</item> <item>GT</item> <item>PA</item> <item>CO</item>
+    </stringarray>
+</resources>
